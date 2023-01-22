@@ -4,7 +4,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/blog/</loc>
+            <loc>https://dylanpowers.me/</loc>
             <lastmod>2022-05-16T19:42:35-04:00</lastmod>
             <priority>0</priority>
           </url>
@@ -13,16 +13,16 @@
     
   
     
-  
-    
-  
-    
-  
-    
       <url>
-            <loc>https://dylanpowers.me/</loc>
+            <loc>https://dylanpowers.me/blog/</loc>
             <lastmod>2022-05-16T19:42:35-04:00</lastmod>
           </url>
+    
+  
+    
+  
+    
+  
     
   
     
@@ -242,6 +242,12 @@
       <url>
             <loc>https://dylanpowers.me/blog/extensions-in-swift/</loc>
             <lastmod>2019-08-13T13:25:02-06:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://dylanpowers.me/about/</loc>
           </url>
     
   
