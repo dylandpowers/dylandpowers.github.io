@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -315,8 +315,11 @@
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
         <p>Today we’re going to talk about what I think is Swift’s coolest feature — extensions.</p>
-<p>Extensions allow you to add functionality to an already existing class. In one of my recent projects, I implemented an <a href="https://en.wikipedia.org/wiki/Optical_character_recognition"   target="_blank" rel="noreferrer noopener">OCR</a>
- model that could read text (specifically, a credit card number) from a picture that the user took with the back camera. Unfortunately, if the image wasn’t oriented upwards, the OCR fails, as we would expect. As such, I needed a convenient way to change the orientation of the image with ease.</p>
+<p>Extensions allow you to add functionality to an already existing class. In one of my recent projects, I implemented an <a
+  href="https://en.wikipedia.org/wiki/Optical_character_recognition"
+  
+  target="_blank" rel="noreferrer noopener"
+>OCR</a> model that could read text (specifically, a credit card number) from a picture that the user took with the back camera. Unfortunately, if the image wasn’t oriented upwards, the OCR fails, as we would expect. As such, I needed a convenient way to change the orientation of the image with ease.</p>
 <p>
 
 
@@ -331,8 +334,11 @@
   
 
 </p>
-<p>I quickly found some <a href="https://gist.github.com/schickling/b5d86cb070130f80bb40"   target="_blank" rel="noreferrer noopener">code</a>
- that could easily convert an image (thanks to GitHub user Johannes Schickling for this). Here are the workflows with and without extensions:</p>
+<p>I quickly found some <a
+  href="https://gist.github.com/schickling/b5d86cb070130f80bb40"
+  
+  target="_blank" rel="noreferrer noopener"
+>code</a> that could easily convert an image (thanks to GitHub user Johannes Schickling for this). Here are the workflows with and without extensions:</p>
 <h2 id="without-extensions" class="relative group">Without Extensions <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#without-extensions" aria-label="Anchor">#</a></span></h2>
 <p>Without extensions, the workflow is similar to that of any typical Object-Oriented language. The developer would create a class that performed the orientation fix, and name it accordingly:</p>
 <pre><code>class ImageOrientationFixer {

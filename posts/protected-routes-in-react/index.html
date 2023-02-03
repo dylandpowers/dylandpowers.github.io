@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -100,7 +100,7 @@
     "keywords": ["React","Redux","JWT","Auth","Security","JavaScript","JSX","React-Router-Dom"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "768"
+    "wordCount": "766"
   }]
   </script>
 
@@ -314,12 +314,24 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>If you have ever made a modern single-page web app using React, odds are you used <a href="https://reactrouter.com/"   target="_blank" rel="noreferrer noopener">react-router-dom</a>
- for client-side routing. In this tutorial, I will demonstrate how to protect routes such that only logged-in users can navigate to certain places. For example, you don&rsquo;t want every user to be able to navigate to <code>/dashboard</code>, but anybody should be able to hit <code>/login</code>.</p>
-<p>This tutorial assumes that you have basic familiarity with react-router-dom and how to set up a basic router. If not, please read its <a href="https://reactrouter.com/web/guides/quick-start"   target="_blank" rel="noreferrer noopener">quick start page</a>
- before moving on. This article also assumes that you have a simple way to determine if a user is logged in or not, whether that be through <a href="https://jwt.io/"   target="_blank" rel="noreferrer noopener">JSON web tokens</a>
-, <a href="https://redux.js.org/"   target="_blank" rel="noreferrer noopener">Redux</a>
-, or something else.</p>
+        <p>If you have ever made a modern single-page web app using React, odds are you used <a
+  href="https://reactrouter.com/"
+  
+  target="_blank" rel="noreferrer noopener"
+>react-router-dom</a> for client-side routing. In this tutorial, I will demonstrate how to protect routes such that only logged-in users can navigate to certain places. For example, you don&rsquo;t want every user to be able to navigate to <code>/dashboard</code>, but anybody should be able to hit <code>/login</code>.</p>
+<p>This tutorial assumes that you have basic familiarity with react-router-dom and how to set up a basic router. If not, please read its <a
+  href="https://reactrouter.com/web/guides/quick-start"
+  
+  target="_blank" rel="noreferrer noopener"
+>quick start page</a> before moving on. This article also assumes that you have a simple way to determine if a user is logged in or not, whether that be through <a
+  href="https://jwt.io/"
+  
+  target="_blank" rel="noreferrer noopener"
+>JSON web tokens</a>, <a
+  href="https://redux.js.org/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Redux</a>, or something else.</p>
 <h1 id="overview" class="relative group">Overview <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#overview" aria-label="Anchor">#</a></span></h1>
 <p>A traditional React router without protected routes might look something like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
@@ -354,9 +366,15 @@
 
 <span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">ProtectedRoute</span><span class="p">({</span> <span class="nx">component</span><span class="o">:</span> <span class="nx">Component</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">})</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div><h1 id="protecting-the-route" class="relative group">Protecting the Route <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#protecting-the-route" aria-label="Anchor">#</a></span></h1>
-<p>These next 5 lines of code are where the real magic happens. We will be using react-router-dom&rsquo;s <a href="https://reactrouter.com/web/api/Redirect"   target="_blank" rel="noreferrer noopener">Redirect</a>
- component to redirect to a universally accessible page if the user is not logged in. Otherwise, we will return its <a href="https://reactrouter.com/web/api/Route"   target="_blank" rel="noreferrer noopener">Route</a>
- component, which is what you see in a regular React router.</p>
+<p>These next 5 lines of code are where the real magic happens. We will be using react-router-dom&rsquo;s <a
+  href="https://reactrouter.com/web/api/Redirect"
+  
+  target="_blank" rel="noreferrer noopener"
+>Redirect</a> component to redirect to a universally accessible page if the user is not logged in. Otherwise, we will return its <a
+  href="https://reactrouter.com/web/api/Route"
+  
+  target="_blank" rel="noreferrer noopener"
+>Route</a> component, which is what you see in a regular React router.</p>
 <p>We will pass the <code>...rest</code> parameter to the <code>Route</code> component, which means that everything that we pass to <code>ProtectedRoute</code> (except for the <code>component</code> prop) will then be passed to the <code>Route</code> component. We will take advantage of <code>Route</code>&rsquo;s <code>render</code> prop to make it render the component passed in to our protected route:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">Route</span> <span class="p">{</span><span class="na">...rest</span><span class="p">}</span> <span class="na">render</span><span class="o">=</span><span class="p">{(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">Component</span> <span class="p">{</span><span class="na">...props</span><span class="p">}</span> <span class="p">/&gt;}</span> <span class="p">/&gt;</span>
 </code></pre></div><p>Of course, we will only return this route if the user is logged in. If not, we will return a <code>Redirect</code> to the login page. After adding the logic and the imports in the file, it should look like this:</p>

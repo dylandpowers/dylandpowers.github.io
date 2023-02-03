@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hamcrest on Dylan Powers</title>
+    <link>https://dylanpowers.me/tags/hamcrest/</link>
+    <description>Recent content in Hamcrest on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/hamcrest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hamcrest contains() is weird</title>
+      <link>https://dylanpowers.me/micros/hamcrest-contains-is-weird/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/micros/hamcrest-contains-is-weird/</guid>
+      <description>I have been using Hamcrest in Java for as long as I can remember.</description>
+    </item>
+    
+  </channel>
+</rss>

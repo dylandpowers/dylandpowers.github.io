@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChatGPT on Dylan Powers</title>
+    <link>https://dylanpowers.me/tags/chatgpt/</link>
+    <description>Recent content in ChatGPT on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why is everything a todo list app?</title>
+      <link>https://dylanpowers.me/micros/why-is-everything-a-todo-app/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/micros/why-is-everything-a-todo-app/</guid>
+      <description>I was recently going through some Apollo documentationabout useQuery and I noticed the examples related to fetching and updating pictures of dogs.</description>
+    </item>
+    
+  </channel>
+</rss>

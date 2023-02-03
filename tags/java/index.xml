@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on Dylan Powers</title>
+    <title>Java on Dylan Powers</title>
     <link>https://dylanpowers.me/tags/java/</link>
-    <description>Recent content in java on Dylan Powers</description>
+    <description>Recent content in Java on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Aug 2019 13:33:00 -0600</lastBuildDate><atom:link href="https://dylanpowers.me/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hamcrest contains() is weird</title>
+      <link>https://dylanpowers.me/micros/hamcrest-contains-is-weird/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/micros/hamcrest-contains-is-weird/</guid>
+      <description>I have been using Hamcrest in Java for as long as I can remember.</description>
+    </item>
+    
     <item>
       <title>Books I Read This Summer</title>
       <link>https://dylanpowers.me/posts/books-i-read-this-summer/</link>

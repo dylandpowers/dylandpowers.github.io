@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -100,7 +100,7 @@
     "keywords": ["React","Redux","Firebase","JavaScript","React-Redux","React-Redux-Firebase","useFirestoreConnect","useFirebaseConnect","Auth","Authentication","User"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1153"
+    "wordCount": "1148"
   }]
   </script>
 
@@ -314,13 +314,28 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>In this post, I will show you how to use the <a href="https://www.npmjs.com/package/react-redux-firebase"   target="_blank" rel="noreferrer noopener">react-redux-firebase</a>
- package to incorporate Redux bindings for Firebase into your React project. This allows you to incorporate Firebase and Firestore data  into global state without any extra work, as well as handle auth in a super simple way. If you are unfamiliar with <a href="https://reactjs.org/"   target="_blank" rel="noreferrer noopener">React</a>
-, <a href="https://redux.js.org"   target="_blank" rel="noreferrer noopener">Redux</a>
-, or <a href="https://firebase.google.com/"   target="_blank" rel="noreferrer noopener">Firebase</a>
-, please spend some time familiarizing yourself with those before jumping in.</p>
-<p>This is <strong>not</strong> a beginning-to-end tutorial; rather, I will show you how the <code>react-redux-firebase</code> (RRF) package to make your app flow much simpler. For setup instructions, check out <a href="https://www.npmjs.com/package/react-redux-firebase"   target="_blank" rel="noreferrer noopener">the documentation</a>
-.</p>
+        <p>In this post, I will show you how to use the <a
+  href="https://www.npmjs.com/package/react-redux-firebase"
+  
+  target="_blank" rel="noreferrer noopener"
+>react-redux-firebase</a> package to incorporate Redux bindings for Firebase into your React project. This allows you to incorporate Firebase and Firestore data  into global state without any extra work, as well as handle auth in a super simple way. If you are unfamiliar with <a
+  href="https://reactjs.org/"
+  
+  target="_blank" rel="noreferrer noopener"
+>React</a>, <a
+  href="https://redux.js.org"
+  
+  target="_blank" rel="noreferrer noopener"
+>Redux</a>, or <a
+  href="https://firebase.google.com/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Firebase</a>, please spend some time familiarizing yourself with those before jumping in.</p>
+<p>This is <strong>not</strong> a beginning-to-end tutorial; rather, I will show you how the <code>react-redux-firebase</code> (RRF) package to make your app flow much simpler. For setup instructions, check out <a
+  href="https://www.npmjs.com/package/react-redux-firebase"
+  
+  target="_blank" rel="noreferrer noopener"
+>the documentation</a>.</p>
 <h1 id="auth" class="relative group">Auth <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#auth" aria-label="Anchor">#</a></span></h1>
 <h3 id="sign-in" class="relative group">Sign In <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#sign-in" aria-label="Anchor">#</a></span></h3>
 <p>First, I will show you how this package makes auth in your application so much simpler. Without RRF, you would have to perform the sign in flow and then <code>dispatch</code> an action to the store with the user information; then, any time you needed that, you would have to use a <code>useSelector</code> hook to get that sign in information. It might look something like this:</p>
@@ -518,8 +533,11 @@
 
   <span class="c1">// ...
 </span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>Isn&rsquo;t that much cleaner? You can also use special <a href="https://firebase.google.com/docs/reference/js/firebase.database.Query"   target="_blank" rel="noreferrer noopener">query parameters</a>
- to change how the data is sorted, among other things:</p>
+</code></pre></div><p>Isn&rsquo;t that much cleaner? You can also use special <a
+  href="https://firebase.google.com/docs/reference/js/firebase.database.Query"
+  
+  target="_blank" rel="noreferrer noopener"
+>query parameters</a> to change how the data is sorted, among other things:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">useFirebaseConnect</span><span class="p">({</span>
   <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;todos&#39;</span><span class="p">,</span>
   <span class="nx">queryParams</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;orderByKey&#34;</span><span class="p">]</span>
@@ -529,9 +547,15 @@
 </code></pre></div><p>Basically, anything that you could do with the standard SDK, the hook exposes to you as well.</p>
 <h1 id="conclusion" class="relative group">Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a></span></h1>
 <p>If you&rsquo;re developing an app with React, Redux, and Firebase, then you should be using this library to make your code much cleaner. Auth has never been simpler. Plus, the custom Firebase and Firestore hooks do so much extra leg work for you, so you can focus on writing application code.</p>
-<p><em>Note: header image taken from <a href="https://www.youtube.com/watch?v=TlpX0aMYmrk"   target="_blank" rel="noreferrer noopener">this tutorial</a>
- from <a href="https://www.youtube.com/channel/UCIWTUpwIzh_P73LlbX20VQA"   target="_blank" rel="noreferrer noopener">Aberraouf Zine</a>
-.</em></p>
+<p><em>Note: header image taken from <a
+  href="https://www.youtube.com/watch?v=TlpX0aMYmrk"
+  
+  target="_blank" rel="noreferrer noopener"
+>this tutorial</a> from <a
+  href="https://www.youtube.com/channel/UCIWTUpwIzh_P73LlbX20VQA"
+  
+  target="_blank" rel="noreferrer noopener"
+>Aberraouf Zine</a>.</em></p>
 
       </div>
     </section>

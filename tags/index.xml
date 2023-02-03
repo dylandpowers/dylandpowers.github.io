@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 May 2022 19:42:35 -0400</lastBuildDate><atom:link href="https://dylanpowers.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hamcrest</title>
+      <link>https://dylanpowers.me/tags/hamcrest/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/hamcrest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://dylanpowers.me/tags/java/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apollo</title>
+      <link>https://dylanpowers.me/tags/apollo/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/apollo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChatGPT</title>
+      <link>https://dylanpowers.me/tags/chatgpt/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://dylanpowers.me/tags/graphql/</link>
+      <pubDate>Tue, 24 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Algorithms</title>
       <link>https://dylanpowers.me/tags/algorithms/</link>
@@ -490,15 +535,6 @@
       <pubDate>Thu, 15 Aug 2019 13:33:00 -0600</pubDate>
       
       <guid>https://dylanpowers.me/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://dylanpowers.me/tags/java/</link>
-      <pubDate>Thu, 15 Aug 2019 13:33:00 -0600</pubDate>
-      
-      <guid>https://dylanpowers.me/tags/java/</guid>
       <description></description>
     </item>
     
