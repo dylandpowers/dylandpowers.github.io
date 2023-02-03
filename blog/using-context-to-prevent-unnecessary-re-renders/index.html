@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -100,7 +100,7 @@
     "keywords": ["React","Frontend","Javascript","JSX","Context","Hooks","Components"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "830"
+    "wordCount": "829"
   }]
   </script>
 
@@ -113,7 +113,7 @@
     
       <link href="https://github.com/dylandpowers" rel="me" />
     
-      <link href="https://linkedin.com/in/dylandpowers25" rel="me" />
+      <link href="https://linkedin.com/in/dylanpowers25" rel="me" />
     
   
   
@@ -179,6 +179,24 @@
                     <span
                       class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
                       >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/micros/"
+                  title="Micros"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Micros</span
                     >
                   </a
                 >
@@ -321,12 +339,21 @@
 <span class="p">}</span>
 </code></pre></div><p>In this situation, <code>Child</code> receives both <code>foo</code> and <code>bar</code> as props, but only truly &ldquo;cares&rdquo; about the value of <code>foo</code>; <code>Grandchild</code> cares about the value of <code>bar</code>. In this case, <code>Child</code> is a messenger component for the <code>bar</code> prop. <code>Child</code> should only re-render when the value of <code>foo</code> updates, but in this case it will also re-render when <code>bar</code> updates. How can we fix this?</p>
 <h1 id="the-context-api" class="relative group">The Context API <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-context-api" aria-label="Anchor">#</a></span></h1>
-<p>Using React&rsquo;s <a href="https://reactjs.org/docs/context.html"   target="_blank" rel="noreferrer noopener">Context API</a>
-, we can broadcast changes to values, and only components that directly subscribe to that piece of context will receive the new value. This solves the problem of messenger components re-rendering unnecessarily, because we no longer need to pass props down - we can simply directly subscribe to the value in <code>Grandchild</code>. To demonstrate this, I will add <a href="https://reactjs.org/docs/glossary.html#refs"   target="_blank" rel="noreferrer noopener">refs</a>
- to show the number of re-renders for each component before and after adding context.</p>
+<p>Using React&rsquo;s <a
+  href="https://reactjs.org/docs/context.html"
+  
+  target="_blank" rel="noreferrer noopener"
+>Context API</a>, we can broadcast changes to values, and only components that directly subscribe to that piece of context will receive the new value. This solves the problem of messenger components re-rendering unnecessarily, because we no longer need to pass props down - we can simply directly subscribe to the value in <code>Grandchild</code>. To demonstrate this, I will add <a
+  href="https://reactjs.org/docs/glossary.html#refs"
+  
+  target="_blank" rel="noreferrer noopener"
+>refs</a> to show the number of re-renders for each component before and after adding context.</p>
 <h1 id="before" class="relative group">Before <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#before" aria-label="Anchor">#</a></span></h1>
-<p>Using the current system of prop drilling, we can see how <code>Child</code> will re-render every time either prop is updated. If you like, use <a href="https://github.com/facebook/create-react-app"   target="_blank" rel="noreferrer noopener">create-react-app</a>
- to bootstrap an app to see the renders in action.</p>
+<p>Using the current system of prop drilling, we can see how <code>Child</code> will re-render every time either prop is updated. If you like, use <a
+  href="https://github.com/facebook/create-react-app"
+  
+  target="_blank" rel="noreferrer noopener"
+>create-react-app</a> to bootstrap an app to see the renders in action.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kd">function</span> <span class="nx">Parent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="p">[</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">setFoo</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="kr">const</span> <span class="p">[</span><span class="nx">bar</span><span class="p">,</span> <span class="nx">setBar</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -418,8 +445,11 @@
     <span class="p">&lt;/&gt;</span>
     <span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><p>As you can see, we made two updates. First, we used a piece of context to hold the reference to <code>bar</code>, and we have <code>Grandchild</code> subscribe to that piece of context using the <code>useContext</code> hook. However, this is only half of the equation; if we do not memoize <code>Child</code>, then anytime <code>bar</code> is updated in <code>Parent</code>, <strong><code>Child</code> will re-render.</strong> In order to prevent this, we use the <a href="https://reactjs.org/docs/react-api.html#reactmemo"   target="_blank" rel="noreferrer noopener">memo</a>
- function to create a memoized version of the <code>Child</code> component that will only re-render when the props change.</p>
+</code></pre></div><p>As you can see, we made two updates. First, we used a piece of context to hold the reference to <code>bar</code>, and we have <code>Grandchild</code> subscribe to that piece of context using the <code>useContext</code> hook. However, this is only half of the equation; if we do not memoize <code>Child</code>, then anytime <code>bar</code> is updated in <code>Parent</code>, <strong><code>Child</code> will re-render.</strong> In order to prevent this, we use the <a
+  href="https://reactjs.org/docs/react-api.html#reactmemo"
+  
+  target="_blank" rel="noreferrer noopener"
+>memo</a> function to create a memoized version of the <code>Child</code> component that will only re-render when the props change.</p>
 <p>And voila! We have successfully eliminated unnecessary messenger re-renders with the Context API and some simple memoization.</p>
 <p>I would be remiss not to say that for most applications, re-renders don&rsquo;t cause much of a performance issue because most applications don&rsquo;t involve a lot of front-end computation. However, for applications with a lot of animations or drag-and-drops, it&rsquo;s more than worth it to eliminate unnecessary re-renders wherever you can. Happy coding!</p>
 
@@ -496,7 +526,7 @@
         <a
           class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
           style="will-change:transform;"
-          href="https://linkedin.com/in/dylandpowers25"
+          href="https://linkedin.com/in/dylanpowers25"
           target="_blank"
           aria-label="Linkedin"
           rel="me noopener noreferrer"

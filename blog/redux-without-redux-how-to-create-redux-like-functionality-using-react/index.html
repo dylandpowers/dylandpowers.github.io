@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -100,7 +100,7 @@
     "keywords": ["React","Redux","Javascript","Frontend","Web","Mobile","Hooks","React-Redux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1025"
+    "wordCount": "1023"
   }]
   </script>
 
@@ -113,7 +113,7 @@
     
       <link href="https://github.com/dylandpowers" rel="me" />
     
-      <link href="https://linkedin.com/in/dylandpowers25" rel="me" />
+      <link href="https://linkedin.com/in/dylanpowers25" rel="me" />
     
   
   
@@ -179,6 +179,24 @@
                     <span
                       class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
                       >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/micros/"
+                  title="Micros"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Micros</span
                     >
                   </a
                 >
@@ -296,16 +314,28 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>When it comes to frontend state management libraries, it doesn&rsquo;t get much better than good ol' <a href="https://redux.js.org/"   target="_blank" rel="noreferrer noopener">Redux</a>
-. It allows you to define one or more reducers, dispatch updates to a global state, and subscribe to only the parts of state that you care about in each a component.</p>
-<p>However, as I have continued to incorporate Redux into smaller personal projects, I have found some of its features to be superfluous to my needs. For example, for small projects that make use of Ajax, I sometimes prefer to separate the global state from the Ajax calls. This makes something like <a href="https://github.com/reduxjs/redux-thunk"   target="_blank" rel="noreferrer noopener">redux-thunk</a>
- unnecessary, meaning that I would not make use of any Redux middleware (fun fact: the redux-thunk library is only <a href="https://github.com/reduxjs/redux-thunk/blob/master/src/index.js"   target="_blank" rel="noreferrer noopener">14 lines of source code</a>
-).</p>
+        <p>When it comes to frontend state management libraries, it doesn&rsquo;t get much better than good ol' <a
+  href="https://redux.js.org/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Redux</a>. It allows you to define one or more reducers, dispatch updates to a global state, and subscribe to only the parts of state that you care about in each a component.</p>
+<p>However, as I have continued to incorporate Redux into smaller personal projects, I have found some of its features to be superfluous to my needs. For example, for small projects that make use of Ajax, I sometimes prefer to separate the global state from the Ajax calls. This makes something like <a
+  href="https://github.com/reduxjs/redux-thunk"
+  
+  target="_blank" rel="noreferrer noopener"
+>redux-thunk</a> unnecessary, meaning that I would not make use of any Redux middleware (fun fact: the redux-thunk library is only <a
+  href="https://github.com/reduxjs/redux-thunk/blob/master/src/index.js"
+  
+  target="_blank" rel="noreferrer noopener"
+>14 lines of source code</a>).</p>
 <p>Fortunately, implementing a basic Redux is <em>much</em> simpler than you might think! We just need a custom reducer and a couple of React hooks. This tutorial will show you how to create a simple global state, along with a dispatcher and a way to update that global state. We will be using functional components in this tutorial, and we will create a simple counter which can be incremented and decremented. Let&rsquo;s get started!</p>
 <h1 id="the-reducer" class="relative group">The Reducer <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-reducer" aria-label="Anchor">#</a></span></h1>
 <p>For starters, a reducer is just a function which accepts a current state and an action and then based on that action, returns a new state. That&rsquo;s it. However, without some active management, you would have to keep track of the current state and pass it to the reducer every time you wanted to dispatch an action.</p>
-<p>Fortunately, React already covers a lot of the ground for us with the <a href="https://reactjs.org/docs/hooks-reference.html#usereducer"   target="_blank" rel="noreferrer noopener"><code>useReducer</code></a>
- hook. It accepts two arguments: a reducer and an initial state (it also optionally accepts a lazy state initialization function). The reducer must have the signature described above:</p>
+<p>Fortunately, React already covers a lot of the ground for us with the <a
+  href="https://reactjs.org/docs/hooks-reference.html#usereducer"
+  
+  target="_blank" rel="noreferrer noopener"
+><code>useReducer</code></a> hook. It accepts two arguments: a reducer and an initial state (it also optionally accepts a lazy state initialization function). The reducer must have the signature described above:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">state</span><span class="p">;</span> <span class="c1">// some new state
 </span><span class="c1"></span><span class="p">}</span>
@@ -385,8 +415,11 @@
 <span class="p">}</span>
 </code></pre></div><p>Now, any child component will have access to the <code>dispatch</code> function, which they can use to update the <code>count</code> state globally! If you wish to access <code>count</code> in child components as well, it would be trivial to make another context to provide that value anywhere.</p>
 <h1 id="dispatching-actions-from-child-components" class="relative group">Dispatching Actions from Child Components <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#dispatching-actions-from-child-components" aria-label="Anchor">#</a></span></h1>
-<p>Now, for the pièce de résistance! By using the <a href="https://reactjs.org/docs/hooks-reference.html#usecontext"   target="_blank" rel="noreferrer noopener"><code>useContext</code></a>
- hook, we can access the value of the created context from any child component and <code>dispatch</code> actions to the global state, just like Redux:</p>
+<p>Now, for the pièce de résistance! By using the <a
+  href="https://reactjs.org/docs/hooks-reference.html#usecontext"
+  
+  target="_blank" rel="noreferrer noopener"
+><code>useContext</code></a> hook, we can access the value of the created context from any child component and <code>dispatch</code> actions to the global state, just like Redux:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// ChildComponent.jsx
 </span><span class="c1"></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">CounterContext</span><span class="p">,</span> <span class="nx">increment</span><span class="p">,</span> <span class="nx">decrement</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./reducer&#39;</span><span class="p">;</span>
@@ -484,7 +517,7 @@
         <a
           class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
           style="will-change:transform;"
-          href="https://linkedin.com/in/dylandpowers25"
+          href="https://linkedin.com/in/dylanpowers25"
           target="_blank"
           aria-label="Linkedin"
           rel="me noopener noreferrer"

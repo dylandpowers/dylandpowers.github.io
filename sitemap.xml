@@ -46,18 +46,8 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <url>
-            <loc>https://dylanpowers.me/posts/</loc>
+            <loc>https://dylanpowers.me/blog/</loc>
             <lastmod>2022-05-16T19:42:35-04:00</lastmod>
           </url>
     
@@ -65,15 +55,25 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <url>
-            <loc>https://dylanpowers.me/posts/what-coding-interviews-should-be/</loc>
+            <loc>https://dylanpowers.me/blog/what-coding-interviews-should-be/</loc>
             <lastmod>2022-05-16T19:42:35-04:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/creating-robust-popovers-in-react/</loc>
+            <loc>https://dylanpowers.me/blog/creating-robust-popovers-in-react/</loc>
             <lastmod>2022-02-21T18:48:03-05:00</lastmod>
           </url>
     
@@ -102,7 +102,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/my-2021-work-from-home-setup/</loc>
+            <loc>https://dylanpowers.me/blog/my-2021-work-from-home-setup/</loc>
             <lastmod>2021-08-22T21:18:51-04:00</lastmod>
           </url>
     
@@ -121,14 +121,14 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/when-to-use-usecallback/</loc>
+            <loc>https://dylanpowers.me/blog/when-to-use-usecallback/</loc>
             <lastmod>2021-08-15T21:10:54-04:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/essential-npm-packages-for-react-beginners/</loc>
+            <loc>https://dylanpowers.me/blog/essential-npm-packages-for-react-beginners/</loc>
             <lastmod>2021-08-08T16:20:12-04:00</lastmod>
           </url>
     
@@ -143,7 +143,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/using-context-to-prevent-unnecessary-re-renders/</loc>
+            <loc>https://dylanpowers.me/blog/using-context-to-prevent-unnecessary-re-renders/</loc>
             <lastmod>2021-05-09T22:49:47-04:00</lastmod>
           </url>
     
@@ -156,7 +156,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/redux-without-redux-how-to-create-redux-like-functionality-using-react/</loc>
+            <loc>https://dylanpowers.me/blog/redux-without-redux-how-to-create-redux-like-functionality-using-react/</loc>
             <lastmod>2021-02-02T21:03:31-05:00</lastmod>
           </url>
     
@@ -169,7 +169,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/protected-routes-in-react/</loc>
+            <loc>https://dylanpowers.me/blog/protected-routes-in-react/</loc>
             <lastmod>2020-09-08T10:49:45-04:00</lastmod>
           </url>
     
@@ -186,7 +186,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/how-to-use-react-redux-firebase/</loc>
+            <loc>https://dylanpowers.me/blog/how-to-use-react-redux-firebase/</loc>
             <lastmod>2020-06-24T10:25:29-04:00</lastmod>
           </url>
     
@@ -201,7 +201,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/striking-the-balance-development-in-a-fast-moving-startup/</loc>
+            <loc>https://dylanpowers.me/blog/striking-the-balance-development-in-a-fast-moving-startup/</loc>
             <lastmod>2020-02-09T18:55:28-05:00</lastmod>
           </url>
     
@@ -226,7 +226,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/tips-for-a-summer-in-new-york/</loc>
+            <loc>https://dylanpowers.me/blog/tips-for-a-summer-in-new-york/</loc>
             <lastmod>2019-08-27T17:25:06-04:00</lastmod>
           </url>
     
@@ -241,7 +241,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/books-i-read-this-summer/</loc>
+            <loc>https://dylanpowers.me/blog/books-i-read-this-summer/</loc>
             <lastmod>2019-08-15T13:33:00-06:00</lastmod>
           </url>
     
@@ -262,14 +262,14 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/lessons-i-learned-as-an-intern/</loc>
+            <loc>https://dylanpowers.me/blog/lessons-i-learned-as-an-intern/</loc>
             <lastmod>2019-08-13T13:49:31-06:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/extensions-in-swift/</loc>
+            <loc>https://dylanpowers.me/blog/extensions-in-swift/</loc>
             <lastmod>2019-08-13T13:25:02-06:00</lastmod>
           </url>
     
@@ -282,7 +282,7 @@
   
     
       <url>
-            <loc>https://dylanpowers.me/posts/new-post/</loc>
+            <loc>https://dylanpowers.me/blog/new-post/</loc>
           </url>
     
   

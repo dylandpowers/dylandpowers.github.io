@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Dylan Powers</title>
+    <title>java on Dylan Powers</title>
     <link>https://dylanpowers.me/tags/java/</link>
-    <description>Recent content in Java on Dylan Powers</description>
+    <description>Recent content in java on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/java/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +18,10 @@
     
     <item>
       <title>Books I Read This Summer</title>
-      <link>https://dylanpowers.me/posts/books-i-read-this-summer/</link>
+      <link>https://dylanpowers.me/blog/books-i-read-this-summer/</link>
       <pubDate>Thu, 15 Aug 2019 13:33:00 -0600</pubDate>
       
-      <guid>https://dylanpowers.me/posts/books-i-read-this-summer/</guid>
+      <guid>https://dylanpowers.me/blog/books-i-read-this-summer/</guid>
       <description>One of my favorite things about the summers is how much time I have to catch up on reading.</description>
     </item>
     

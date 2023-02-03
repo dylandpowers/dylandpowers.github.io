@@ -9,46 +9,46 @@
     <lastBuildDate>Mon, 21 Feb 2022 18:48:03 -0500</lastBuildDate><atom:link href="https://dylanpowers.me/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating Robust Popovers in React using Material UI</title>
-      <link>https://dylanpowers.me/posts/creating-robust-popovers-in-react/</link>
+      <link>https://dylanpowers.me/blog/creating-robust-popovers-in-react/</link>
       <pubDate>Mon, 21 Feb 2022 18:48:03 -0500</pubDate>
       
-      <guid>https://dylanpowers.me/posts/creating-robust-popovers-in-react/</guid>
+      <guid>https://dylanpowers.me/blog/creating-robust-popovers-in-react/</guid>
       <description>A tutorial on creating robust popovers using Material UI.</description>
     </item>
     
     <item>
       <title>When to Use useCallback</title>
-      <link>https://dylanpowers.me/posts/when-to-use-usecallback/</link>
+      <link>https://dylanpowers.me/blog/when-to-use-usecallback/</link>
       <pubDate>Sun, 15 Aug 2021 21:10:54 -0400</pubDate>
       
-      <guid>https://dylanpowers.me/posts/when-to-use-usecallback/</guid>
+      <guid>https://dylanpowers.me/blog/when-to-use-usecallback/</guid>
       <description>When to actually use the useCallback function in React</description>
     </item>
     
     <item>
       <title>Essential NPM Packages for React Beginners</title>
-      <link>https://dylanpowers.me/posts/essential-npm-packages-for-react-beginners/</link>
+      <link>https://dylanpowers.me/blog/essential-npm-packages-for-react-beginners/</link>
       <pubDate>Sun, 08 Aug 2021 16:20:12 -0400</pubDate>
       
-      <guid>https://dylanpowers.me/posts/essential-npm-packages-for-react-beginners/</guid>
+      <guid>https://dylanpowers.me/blog/essential-npm-packages-for-react-beginners/</guid>
       <description>A collection of NPM packages which comprise an excellent toolset for beginners.</description>
     </item>
     
     <item>
       <title>Using Context to Prevent Unnecessary Re Renders</title>
-      <link>https://dylanpowers.me/posts/using-context-to-prevent-unnecessary-re-renders/</link>
+      <link>https://dylanpowers.me/blog/using-context-to-prevent-unnecessary-re-renders/</link>
       <pubDate>Sun, 09 May 2021 22:49:47 -0400</pubDate>
       
-      <guid>https://dylanpowers.me/posts/using-context-to-prevent-unnecessary-re-renders/</guid>
+      <guid>https://dylanpowers.me/blog/using-context-to-prevent-unnecessary-re-renders/</guid>
       <description>Using React&amp;rsquo;s Context API to prevent unnecessary re-renders in React applications.</description>
     </item>
     
     <item>
       <title>Redux Without Redux: How to Create Redux-like Functionality Using React</title>
-      <link>https://dylanpowers.me/posts/redux-without-redux-how-to-create-redux-like-functionality-using-react/</link>
+      <link>https://dylanpowers.me/blog/redux-without-redux-how-to-create-redux-like-functionality-using-react/</link>
       <pubDate>Tue, 02 Feb 2021 21:03:31 -0500</pubDate>
       
-      <guid>https://dylanpowers.me/posts/redux-without-redux-how-to-create-redux-like-functionality-using-react/</guid>
+      <guid>https://dylanpowers.me/blog/redux-without-redux-how-to-create-redux-like-functionality-using-react/</guid>
       <description>Create a simple Redux-like module using pure React</description>
     </item>
     

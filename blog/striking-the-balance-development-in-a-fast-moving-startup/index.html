@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.001c0d1efdb688490593281d28088c05f329dba8795ad1d0908855388581c32d591279cc3cef35e1fa6a2d34617ac0acd30cae7cefc0823bc53648d159eb782f.css"
-    integrity="sha512-ABwNHv22iEkFkygdKAiMBfMp26h5WtHQkIhVOIWBwy1ZEnnMPO814fpqLTRhesCs0wyufO/AgjvFNkjRWet4Lw=="
+    href="/css/main.bundle.min.ec067e3b50018cea2b1506f103813d03e906410fdfe21bcd12eb6bd07303587fb95b1f9e2a62064cb8044eda56fdb566fff31bef7c99fd7e33698ab89634731c.css"
+    integrity="sha512-7AZ&#43;O1ABjOorFQbxA4E9A&#43;kGQQ/f4hvNEutr0HMDWH&#43;5Wx&#43;eKmIGTLgETtpW/bVm//Mb73yZ/X4zaYq4ljRzHA=="
   />
   
   
@@ -100,7 +100,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "805"
+    "wordCount": "803"
   }]
   </script>
 
@@ -113,7 +113,7 @@
     
       <link href="https://github.com/dylandpowers" rel="me" />
     
-      <link href="https://linkedin.com/in/dylandpowers25" rel="me" />
+      <link href="https://linkedin.com/in/dylanpowers25" rel="me" />
     
   
   
@@ -179,6 +179,24 @@
                     <span
                       class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
                       >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/micros/"
+                  title="Micros"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Micros</span
                     >
                   </a
                 >
@@ -311,15 +329,24 @@
   
 
 </p>
-<p>Over the past five months, I have been a Software Engineer for <a href="https://ourspaceapp.com/"   target="_blank" rel="noreferrer noopener">OurSpace</a>
-, a real-time Q&amp;A platform for locations and spaces. Currently, we have released a full working product at Duke University, and we plan to expand as we continue to perfect our core product. Working on a startup means that we <em>do</em> move extremely quickly; a lot quicker than anything I am used to. This might mean pushing out hundreds of lines of code every day to meet our strict deadlines and release goals. As such, we often do not have time to waste with overly scrutinous code reviews and setting up rigorous CI/CD pipelines.</p>
+<p>Over the past five months, I have been a Software Engineer for <a
+  href="https://ourspaceapp.com/"
+  
+  target="_blank" rel="noreferrer noopener"
+>OurSpace</a>, a real-time Q&amp;A platform for locations and spaces. Currently, we have released a full working product at Duke University, and we plan to expand as we continue to perfect our core product. Working on a startup means that we <em>do</em> move extremely quickly; a lot quicker than anything I am used to. This might mean pushing out hundreds of lines of code every day to meet our strict deadlines and release goals. As such, we often do not have time to waste with overly scrutinous code reviews and setting up rigorous CI/CD pipelines.</p>
 <p>At least, that&rsquo;s what I thought at first. Since then, I have realized that while we do need to hit deadlines, investing a little bit more time into flexibility really pays off in the long run. In this article, I aim to explain why it&rsquo;s important to strike that balance between moving quickly and developing flexible, robust code.</p>
 <h3 id="creating-reusable-interfaces" class="relative group">Creating Reusable Interfaces <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#creating-reusable-interfaces" aria-label="Anchor">#</a></span></h3>
 <p>Part of the excitement of working on a startup is the freedom in choosing which technologies to use - this also means switching technologies often. This means that, especially on the server-side, creating reusable interfaces is invaluable, as it allows future devs to easily swap out implementations.</p>
 <p>When developing quickly, it&rsquo;s really easy to fall into the mindset of &ldquo;I&rsquo;m just going to make a class that works right now, so there&rsquo;s no need to create an interface.&rdquo; Yes, the development process will be easier <em>now</em>, but what happens in the future when another developer has to swap out the implementation? They will spend at least twice as long as they would if you had just made an interface.</p>
-<p>To give you an example: when we first started on this journey, we used Google&rsquo;s <a href="https://firebase.google.com/docs/firestore"   target="_blank" rel="noreferrer noopener">Cloud Firestore</a>
- for all of our data storage. This meant clients on the backend for communicating with our Firestore. Luckily enough, our early developers created a <code>DbClient</code> interface that  declared methods for communicating with <em>whatever</em> db we chose, so when we finally made the choice to migrate to <a href="https://www.mongodb.com/"   target="_blank" rel="noreferrer noopener">MongoDB</a>
-, the transition was effortless. Even though we lost some early development time creating these interfaces, we more than made up for it by saving a plethora of time swapping out our implementation.</p>
+<p>To give you an example: when we first started on this journey, we used Google&rsquo;s <a
+  href="https://firebase.google.com/docs/firestore"
+  
+  target="_blank" rel="noreferrer noopener"
+>Cloud Firestore</a> for all of our data storage. This meant clients on the backend for communicating with our Firestore. Luckily enough, our early developers created a <code>DbClient</code> interface that  declared methods for communicating with <em>whatever</em> db we chose, so when we finally made the choice to migrate to <a
+  href="https://www.mongodb.com/"
+  
+  target="_blank" rel="noreferrer noopener"
+>MongoDB</a>, the transition was effortless. Even though we lost some early development time creating these interfaces, we more than made up for it by saving a plethora of time swapping out our implementation.</p>
 <p>
 
 
@@ -378,8 +405,11 @@
   
 
 </p>
-<p>Protip: <a href="https://github.com/features/actions"   target="_blank" rel="noreferrer noopener">GitHub Actions</a>
- are a really cool and easy way to automate workflows if you use GitHub for hosting.</p>
+<p>Protip: <a
+  href="https://github.com/features/actions"
+  
+  target="_blank" rel="noreferrer noopener"
+>GitHub Actions</a> are a really cool and easy way to automate workflows if you use GitHub for hosting.</p>
 <hr>
 <p>Working on a startup has been incredibly challenging given the required speed of development. However, as I continue to develop mass amounts of code daily, I thank my past self for designing things well enough to make development for present-day me much easier. When embarking on this long, rewarding journey, don&rsquo;t fall into the &ldquo;move fast&rdquo; mentality unless you append &ldquo;in an well-thought out manner&rdquo; to the end of it.</p>
 
@@ -456,7 +486,7 @@
         <a
           class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
           style="will-change:transform;"
-          href="https://linkedin.com/in/dylandpowers25"
+          href="https://linkedin.com/in/dylanpowers25"
           target="_blank"
           aria-label="Linkedin"
           rel="me noopener noreferrer"

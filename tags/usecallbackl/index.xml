@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 15 Aug 2021 21:10:54 -0400</lastBuildDate><atom:link href="https://dylanpowers.me/tags/usecallbackl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>When to Use useCallback</title>
-      <link>https://dylanpowers.me/posts/when-to-use-usecallback/</link>
+      <link>https://dylanpowers.me/blog/when-to-use-usecallback/</link>
       <pubDate>Sun, 15 Aug 2021 21:10:54 -0400</pubDate>
       
-      <guid>https://dylanpowers.me/posts/when-to-use-usecallback/</guid>
+      <guid>https://dylanpowers.me/blog/when-to-use-usecallback/</guid>
       <description>When to actually use the useCallback function in React</description>
     </item>
     
