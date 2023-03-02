@@ -5,9 +5,37 @@
     
       <url>
             <loc>https://dylanpowers.me/</loc>
-            <lastmod>2023-02-02T00:00:00+00:00</lastmod>
+            <lastmod>2023-03-01T00:00:00+00:00</lastmod>
             <priority>0</priority>
           </url>
+    
+  
+    
+  
+    
+      <url>
+            <loc>https://dylanpowers.me/blog/</loc>
+            <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <url>
+            <loc>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</loc>
+            <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+          </url>
+    
+  
     
   
     
@@ -17,8 +45,6 @@
             <loc>https://dylanpowers.me/micros/hamcrest-contains-is-weird/</loc>
             <lastmod>2023-02-02T00:00:00+00:00</lastmod>
           </url>
-    
-  
     
   
     
@@ -35,21 +61,12 @@
     
   
     
-  
-    
       <url>
             <loc>https://dylanpowers.me/micros/why-is-everything-a-todo-app/</loc>
             <lastmod>2023-01-24T00:00:00+00:00</lastmod>
           </url>
     
   
-    
-  
-    
-      <url>
-            <loc>https://dylanpowers.me/blog/</loc>
-            <lastmod>2022-05-16T19:42:35-04:00</lastmod>
-          </url>
     
   
     
@@ -277,12 +294,6 @@
     
       <url>
             <loc>https://dylanpowers.me/about/</loc>
-          </url>
-    
-  
-    
-      <url>
-            <loc>https://dylanpowers.me/blog/new-post/</loc>
           </url>
     
   

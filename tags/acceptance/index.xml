@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Acceptance on Dylan Powers</title>
+    <link>https://dylanpowers.me/tags/acceptance/</link>
+    <description>Recent content in Acceptance on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/acceptance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 1: The Types of Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</guid>
+      <description>Testing Part 1: The Types of Tests #  Why do I need to write tests?</description>
+    </item>
+    
+  </channel>
+</rss>

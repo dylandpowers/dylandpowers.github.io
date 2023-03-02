@@ -19,14 +19,14 @@
   <meta name="theme-color" content="rgb(255,255,255)" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>What Coding Interviews Should Be &middot; Dylan Powers</title>
-    <meta name="title" content="What Coding Interviews Should Be &middot; Dylan Powers" />
+  <title>Testing Part 1: The Types of Tests &middot; Dylan Powers</title>
+    <meta name="title" content="Testing Part 1: The Types of Tests &middot; Dylan Powers" />
   
-  <meta name="description" content="My vision of what coding interviews should involve." />
+  <meta name="description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?" />
   
   
   
-  <link rel="canonical" href="https://dylanpowers.me/blog/what-coding-interviews-should-be/" />
+  <link rel="canonical" href="https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/" />
   
   
   
@@ -63,17 +63,17 @@
   
   
   
-  <meta property="og:title" content="What Coding Interviews Should Be" />
-<meta property="og:description" content="My vision of what coding interviews should involve." />
+  <meta property="og:title" content="Testing Part 1: The Types of Tests" />
+<meta property="og:description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dylanpowers.me/blog/what-coding-interviews-should-be/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-05-16T19:42:35-04:00" />
-<meta property="article:modified_time" content="2022-05-16T19:42:35-04:00" /><meta property="og:site_name" content="Dylan Powers" />
+<meta property="og:url" content="https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-01T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="What Coding Interviews Should Be"/>
-<meta name="twitter:description" content="My vision of what coding interviews should involve."/>
+<meta name="twitter:title" content="Testing Part 1: The Types of Tests"/>
+<meta name="twitter:description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?"/>
 
   
   <script type="application/ld+json">
@@ -81,26 +81,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "What Coding Interviews Should Be",
-    "headline": "What Coding Interviews Should Be",
+    "name": "Testing Part 1: The Types of Tests",
+    "headline": "Testing Part 1: The Types of Tests",
     
-    "abstract": "My vision of what coding interviews should involve.",
+    "abstract": "Testing Part 1: The Types of Tests #  Why do I need to write tests?",
     "inLanguage": "en",
-    "url" : "https:\/\/dylanpowers.me\/blog\/what-coding-interviews-should-be\/",
+    "url" : "https:\/\/dylanpowers.me\/blog\/testing-part-1-the-types-of-tests\/",
     "author" : {
       "@type": "Person",
       "name": "Dylan Powers"
     },
-    "copyrightYear": "2022",
-    "dateCreated": "2022-05-16T19:42:35-04:00",
-    "datePublished": "2022-05-16T19:42:35-04:00",
+    "copyrightYear": "2023",
+    "dateCreated": "2023-03-01T00:00:00\u002b00:00",
+    "datePublished": "2023-03-01T00:00:00\u002b00:00",
     
-    "dateModified": "2022-05-16T19:42:35-04:00",
+    "dateModified": "2023-03-01T00:00:00\u002b00:00",
     
-    "keywords": ["Coding","Algorithms","Data Structures","Interview","Software Engineering"],
+    "keywords": ["Java","Testing","Unit","Integration","Acceptance","Sourcegraph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "792"
+    "wordCount": "767"
   }]
   </script>
 
@@ -263,7 +263,7 @@
     <header class="max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        What Coding Interviews Should Be
+        Testing Part 1: The Types of Tests
       </h1>
       <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -297,7 +297,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2022-05-16 19:42:35 -0400 EDT">16 May 2022</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+      <time datetime="2023-03-01 00:00:00 &#43;0000 UTC">1 March 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
     
 
     
@@ -314,37 +314,66 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>Today at work, I needed to solve the knapsack problem for an important feature. I had to figure out how to put <em>n</em> items into a knapsack of weight at most <em>W</em>, and maximize the total cost.</p>
-<p>After that, I was working on a feature with a graph, and I had to figure out the minimum number of nodes that could be removed while maintaining a connected network.</p>
-<p>To wrap up the day, product asked me to find the longest common substring between two strings for a client.</p>
-<hr>
-<p>Actually, none of this happened. Most of my day <em>actually</em> involves writing business logic for our system, discussing specifications with product, reviewing code, and monitoring deployments. I’m willing to bet that, if you’re a software engineer, your day looks somewhat like this as well, with some minor differences.</p>
-<p>Unless you work at LeetCode, it’s unlikely that you encounter the problems I mentioned above more than once or twice a year, if at all. These are abstract topics that we scarcely see outside of coding interviews. However, we have widely accepted that coding interviews should and will be like this for the foreseeable future. I ask, though: why are tech companies often evaluating software engineers on their knowledge of dynamic programming, graph theory, and niche algorithms if they are scarcely used on the job?</p>
-<p>I argue that knowledge of these topics is <em>not</em> a direct indicator of how well somebody will perform on the job. I still believe we need to evaluate coding ability (obviously), but I think and know that we can do better than the current system. I’ll outline my thoughts here.</p>
-<h1 id="the-argument-for" class="relative group">The Argument For <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-argument-for" aria-label="Anchor">#</a></span></h1>
-<p>The main argument for these types of interviews is that they demonstrate the candidate’s thinking style. Companies look for candidates who think out loud and who can translate their thoughts into code. I completely understand that. I think the ability to translate abstract concepts in your mind to code on the screen is the crux of software engineering.</p>
-<p>Let me walk you through a typical coding interview. The candidate receives the prompt, and remembers the general approach for tackling these kinds of problems - an approach they likely learned on LeetCode. The candidate begins to outline their approach, pulling in learnings from previous LeetCode problems, and combining them to form a plan. Then, the candidate translates those thoughts into code and writes some test cases.</p>
-<p>Yes, the candidate demonstrated the ability to translate their thoughts into code. But <em>what</em> thoughts did they translate? Likely, they translated thoughts about past LeetCode problems and abstract concepts. Can we really say that those are thoughts that the candidate will have on the job? It’s more likely that thoughts on the job will be related to architecting systems, creating simple APIs for others to consume, reviewing code for style, designing database schemas, etc.</p>
-<h1 id="the-ideal-interview" class="relative group">The Ideal Interview <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-ideal-interview" aria-label="Anchor">#</a></span></h1>
-<p>As I mentioned above, companies still need to assess software engineers on their ability to translate thoughts into code. Companies also need to get a glimpse into how a candidate reasons about a problem from start to finish. Finally, companies should still require a proficiency with basic data structures (maps, lists, queues, etc.). We can still accomplish this with a different style of interview.</p>
-<p>In my opinion, the ideal engineer can write <strong>clean, maintainable code</strong> with an <strong>easy-to-use API.</strong> I propose that we begin to ask engineers more questions about designing entire <strong>classes</strong> with multiple pieces of functionality**,** rather than just implementing singular methods with a clear expected answer.</p>
-<p>For example, a company could ask a candidate to design an in-memory message broker. We would expect methods for <code>enqueue</code> and <code>poll</code>, and we would encourage the candidate to add any other methods they see fit (maybe to get the number of currently enqueued messages),</p>
-<p>In this scenario, there is no one correct answer, so a candidate would not fail solely because they did not generate the correct output. Instead, we would evaluate candidates more holistically:</p>
-<ol>
-<li>How readable is the code? Are variables named well?</li>
-<li>How maintainable is the code? Are pieces of functionality split out into methods?</li>
-<li>How easy-to-use is the API? Could another team easily consume this?</li>
-<li>Are implementation details hidden?</li>
-</ol>
-<p>I believe that these assessments more accurately reflect skills that the candidate would actually use on the job.</p>
-<hr>
-<p>As an industry that powers so much of the world, we can and should do better with evaluating candidates. Companies often miss out on top talent just because a candidate can’t solve the knapsack problem, find the minimum number of nodes that can be removed to maintain a connected graph, or find the maximum length substring of two strings. Let’s start evaluating candidates on skill used on the job.</p>
-<hr>
-<p><em>Header image courtesy of <a
-  href="https://www.imocha.io/platform/live-coding-interview"
+        <h1 id="testing-part-1-the-types-of-tests" class="relative group">Testing Part 1: The Types of Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#testing-part-1-the-types-of-tests" aria-label="Anchor">#</a></span></h1>
+<blockquote>
+<p>Why do I need to write tests? I wrote the code so obviously it works.</p>
+</blockquote>
+<p>Well, yeah, everybody knows that. However, writing tests is a fact of life in the software world, and if we’re going to do something, we might as well do it right. In this series I will outline my testing philosophy and the methods I believe to be the best for writing tests.</p>
+<p>At it’s core, all software testing can be distilled to one sentence:</p>
+<blockquote>
+<p>Given an input, assert on an expected output.</p>
+</blockquote>
+<p>However, as we’ll see, there’s much more to it than that.</p>
+<p>Throughout this series, the example app I will use is a code search app, something like <a
+  href="https://about.sourcegraph.com/"
   
   target="_blank" rel="noreferrer noopener"
->iMocha</a>.</em></p>
+>Sourcegraph</a>. Because <a
+  href="https://dylanpowers.me/micros/why-is-everything-a-todo-app/"
+  
+  target="_blank" rel="noreferrer noopener"
+>todo lists are boring</a> (what an incredible author that wrote that).</p>
+<h1 id="the-types-of-tests" class="relative group">The Types of Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-types-of-tests" aria-label="Anchor">#</a></span></h1>
+<p>The first step toward creating a great testing suite is to understand the types of tests that you need. For any large application, I believe your organization needs (at minimum) three types of tests, each of which I will describe in detail:</p>
+<ol>
+<li>Unit</li>
+<li>Integration</li>
+<li>Acceptance A.K.A. end-to-end</li>
+</ol>
+<p>Individually, each type of test is extremely powerful, but together they make your application resilient to almost anything.</p>
+<h2 id="unit-tests" class="relative group">Unit Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#unit-tests" aria-label="Anchor">#</a></span></h2>
+<p>The first type of tests is unit tests, which undoubtedly will be the most by number in your codebase. They are called unit tests because they test one “unit” of work isolated from everything else. Typically, this means a single function. Something like, given a query, return a list of file metadata objects that match that query:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileMatcher</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">FileMetada</span><span class="o">&gt;</span> <span class="nf">getMatchingFiles</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// ...
+</span><span class="c1"></span>	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>When unit testing a function, you provide an input, and assert on what you would expect the output to be for that input. Here, we would construct a test <code>SearchQuery</code>, and then assert on what we would expect the <code>FileMetadata</code> to look like for a given query.</p>
+<p>This unit of work needs to be isolated from other units of work that would occur during your function call. Other units of work might include dependencies calling other functions. In this example, a dependency might be some sort of <code>QueryTokenizer</code>.</p>
+<p>When we say that each unit needs to be tested in isolation, this means that we shouldn’t allow the results of other units to affect this unit. This means we need to <a
+  href="https://circleci.com/blog/how-to-test-software-part-i-mocking-stubbing-and-contract-testing/"
+  
+  target="_blank" rel="noreferrer noopener"
+>mock</a> those dependencies, a concept I will cover in a later post. However, the main takeaway is that <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>unit tests should never make network calls.</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> If you have a unit test talking to a database, then it’s not a unit test anymore.</p>
+<h2 id="integration-tests" class="relative group">Integration Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#integration-tests" aria-label="Anchor">#</a></span></h2>
+<p>These test integration with other services that your code connects to, typically over a network. These might be databases, search indexes, or other microservices within your company. With integration tests, network calls are normal and usually expected. Imagine we have a class <code>HistoricalQueryStore</code>, which will return past queries for a given user:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HistoricalQueryStore</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">DbClient</span> <span class="n">db</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">SearchQuery</span><span class="o">&gt;</span> <span class="nf">getPastQueries</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>Here, calls to <code>DbClient</code> directly communicate with a database server.</p>
+<p>We still treat the testing process the same: given an input, assert on the expected output. The main difference is that we are not mocking our underlying dependencies.</p>
+<p>However, it should be noted that not every class with dependencies needs both unit and integration tests. Integration tests should only test classes that interact with <strong>**<strong>other</strong>**</strong> parts of the system, outside of your domain, and most likely over a network. For example, if the <code>QueryTokenizer</code> above is in your domain and involves a simple in-process function call, there would be no need for an integration test. However, if it had a dependency on an <code>ElasticSearchClient</code>, an integration test may be appropriate and warranted.</p>
+<h2 id="acceptanceend-to-end-tests" class="relative group">Acceptance/End-to-End Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#acceptanceend-to-end-tests" aria-label="Anchor">#</a></span></h2>
+<p>These test your application from a 10,000 foot view, typically from an API level. Given an API request, assert what you would expect an API response to be. Typically, these do not involve any mocking. Whether your application is a REST or RPC or some other sort of API, these tests should be treated the same. These are called “acceptance” tests, because without these passing, no application build should be accepted.</p>
+<p>On the frontend, these tests typically involve simulating user interactions on a page - however, in this series I will only cover backend testing practices.</p>
+<hr>
+<p>In follow-up posts, I will deep dive into each of the three types of tests outline above. After that, I will rewrite this entire series using Rust instead of Java.</p>
 
       </div>
     </section>
@@ -453,7 +482,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="group flex" href="/blog/creating-robust-popovers-in-react/">
+            <a class="group flex" href="/blog/what-coding-interviews-should-be/">
               <span
                 class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -465,11 +494,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Creating Robust Popovers in React using Material UI</span
+                  >What Coding Interviews Should Be</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2022-02-21 18:48:03 -0500 EST">21 February 2022</time>
+                    <time datetime="2022-05-16 19:42:35 -0400 EDT">16 May 2022</time>
                   
                 </span>
               </span>
@@ -477,28 +506,6 @@
           
         </span>
         <span>
-          
-            <a class="group flex text-right" href="/blog/testing-part-1-the-types-of-tests/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Testing Part 1: The Types of Tests</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-03-01 00:00:00 &#43;0000 UTC">1 March 2023</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-2 text-neutral-700 transition-transform group-hover:translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

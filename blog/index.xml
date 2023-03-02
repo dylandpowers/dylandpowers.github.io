@@ -6,7 +6,16 @@
     <description>Recent content in Blogs on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 May 2022 19:42:35 -0400</lastBuildDate><atom:link href="https://dylanpowers.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 1: The Types of Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</guid>
+      <description>Testing Part 1: The Types of Tests #  Why do I need to write tests?</description>
+    </item>
+    
     <item>
       <title>What Coding Interviews Should Be</title>
       <link>https://dylanpowers.me/blog/what-coding-interviews-should-be/</link>
@@ -131,15 +140,6 @@
       
       <guid>https://dylanpowers.me/blog/extensions-in-swift/</guid>
       <description>Today we’re going to talk about what I think is Swift’s coolest feature — extensions.</description>
-    </item>
-    
-    <item>
-      <title>New Post</title>
-      <link>https://dylanpowers.me/blog/new-post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dylanpowers.me/blog/new-post/</guid>
-      <description>Kleezing rat</description>
     </item>
     
   </channel>
