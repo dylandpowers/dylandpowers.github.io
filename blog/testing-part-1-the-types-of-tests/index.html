@@ -22,7 +22,7 @@
   <title>Testing Part 1: The Types of Tests &middot; Dylan Powers</title>
     <meta name="title" content="Testing Part 1: The Types of Tests &middot; Dylan Powers" />
   
-  <meta name="description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?" />
+  <meta name="description" content="Why do I need to write tests?" />
   
   
   
@@ -64,7 +64,7 @@
   
   
   <meta property="og:title" content="Testing Part 1: The Types of Tests" />
-<meta property="og:description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?" />
+<meta property="og:description" content="Why do I need to write tests?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2023-03-01T00:00:00+00:00" />
@@ -73,7 +73,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testing Part 1: The Types of Tests"/>
-<meta name="twitter:description" content="Testing Part 1: The Types of Tests #  Why do I need to write tests?"/>
+<meta name="twitter:description" content="Why do I need to write tests?"/>
 
   
   <script type="application/ld+json">
@@ -84,7 +84,7 @@
     "name": "Testing Part 1: The Types of Tests",
     "headline": "Testing Part 1: The Types of Tests",
     
-    "abstract": "Testing Part 1: The Types of Tests #  Why do I need to write tests?",
+    "abstract": "Why do I need to write tests?",
     "inLanguage": "en",
     "url" : "https:\/\/dylanpowers.me\/blog\/testing-part-1-the-types-of-tests\/",
     "author" : {
@@ -100,7 +100,7 @@
     "keywords": ["Java","Testing","Unit","Integration","Acceptance","Sourcegraph"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "767"
+    "wordCount": "759"
   }]
   </script>
 
@@ -314,15 +314,15 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <h1 id="testing-part-1-the-types-of-tests" class="relative group">Testing Part 1: The Types of Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#testing-part-1-the-types-of-tests" aria-label="Anchor">#</a></span></h1>
-<blockquote>
+        <blockquote>
 <p>Why do I need to write tests? I wrote the code so obviously it works.</p>
 </blockquote>
 <p>Well, yeah, everybody knows that. However, writing tests is a fact of life in the software world, and if we’re going to do something, we might as well do it right. In this series I will outline my testing philosophy and the methods I believe to be the best for writing tests.</p>
 <p>At it’s core, all software testing can be distilled to one sentence:</p>
-<blockquote>
-<p>Given an input, assert on an expected output.</p>
-</blockquote>
+<div class="lead !mb-9 text-xl">
+  Given an input, assert on an expected output.
+</div>
+
 <p>However, as we’ll see, there’s much more to it than that.</p>
 <p>Throughout this series, the example app I will use is a code search app, something like <a
   href="https://about.sourcegraph.com/"
@@ -356,7 +356,7 @@
   href="https://circleci.com/blog/how-to-test-software-part-i-mocking-stubbing-and-contract-testing/"
   
   target="_blank" rel="noreferrer noopener"
->mock</a> those dependencies, a concept I will cover in a later post. However, the main takeaway is that <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>unit tests should never make network calls.</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>**<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> If you have a unit test talking to a database, then it’s not a unit test anymore.</p>
+>mock</a> those dependencies, a concept I will cover in a later post. However, the main takeaway is that <strong>unit tests should never make network calls.</strong> If you have a unit test talking to a database, then it’s not a unit test anymore.</p>
 <h2 id="integration-tests" class="relative group">Integration Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#integration-tests" aria-label="Anchor">#</a></span></h2>
 <p>These test integration with other services that your code connects to, typically over a network. These might be databases, search indexes, or other microservices within your company. With integration tests, network calls are normal and usually expected. Imagine we have a class <code>HistoricalQueryStore</code>, which will return past queries for a given user:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HistoricalQueryStore</span> <span class="o">{</span>
