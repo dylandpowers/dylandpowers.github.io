@@ -6,7 +6,16 @@
     <description>Recent content in Testing on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 2: Unit Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-2-unit-tests/</link>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-2-unit-tests/</guid>
+      <description>Unit tests will most likely be the most in number in your codebase.</description>
+    </item>
+    
     <item>
       <title>Testing Part 1: The Types of Tests</title>
       <link>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</link>

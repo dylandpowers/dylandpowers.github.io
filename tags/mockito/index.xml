@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mockito on Dylan Powers</title>
+    <link>https://dylanpowers.me/tags/mockito/</link>
+    <description>Recent content in Mockito on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/mockito/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 2: Unit Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-2-unit-tests/</link>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-2-unit-tests/</guid>
+      <description>Unit tests will most likely be the most in number in your codebase.</description>
+    </item>
+    
+  </channel>
+</rss>
