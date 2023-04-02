@@ -6,7 +6,16 @@
     <description>Recent content in Blogs on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 3: Integration Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-3-integration-tests/</link>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-3-integration-tests/</guid>
+      <description>The testing pyramid describes how your codebase should think about tests.</description>
+    </item>
+    
     <item>
       <title>Testing Part 2: Unit Tests</title>
       <link>https://dylanpowers.me/blog/testing-part-2-unit-tests/</link>

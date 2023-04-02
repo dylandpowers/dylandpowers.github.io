@@ -40,8 +40,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.dc87947f9aac09fc013cdb9b5d144a80f3621461c54359b5b1081c74959687cc6521d0a6be43b733e8167f648ea37f8d3dd7789c980e54449427471e6c0c2ea9.css"
-    integrity="sha512-3IeUf5qsCfwBPNubXRRKgPNiFGHFQ1m1sQgcdJWWh8xlIdCmvkO3M&#43;gWf2SOo3&#43;NPdd4nJgOVESUJ0cebAwuqQ=="
+    href="/css/main.bundle.min.827e4067f785eb8991b29db972c66513a2555b27ab79607dadc6efd017da4df0fd429efe9ed49a1fc101da2d1cb711816bb8efc4e01baaf9eeb352b258c9f887.css"
+    integrity="sha512-gn5AZ/eF64mRsp25csZlE6JVWyereWB9rcbv0BfaTfD9Qp7&#43;ntSaH8EB2i0ctxGBa7jvxOAbqvnus1KyWMn4hw=="
   />
   
   
@@ -343,11 +343,11 @@
 <h2 id="unit-tests" class="relative group">Unit Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#unit-tests" aria-label="Anchor">#</a></span></h2>
 <p>The first type of tests is unit tests, which undoubtedly will be the most by number in your codebase. They are called unit tests because they test one “unit” of work isolated from everything else. Typically, this means a single function. Something like, given a query, return a list of file metadata objects that match that query:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileMatcher</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="kd">final</span> <span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">;</span>
 
-	<span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">FileMetada</span><span class="o">&gt;</span> <span class="nf">getMatchingFiles</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
-		<span class="c1">// ...
-</span><span class="c1"></span>	<span class="o">}</span>
+  <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">FileMetada</span><span class="o">&gt;</span> <span class="nf">getMatchingFiles</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div><p>When unit testing a function, you provide an input, and assert on what you would expect the output to be for that input. Here, we would construct a test <code>SearchQuery</code>, and then assert on what we would expect the <code>FileMetadata</code> to look like for a given query.</p>
 <p>This unit of work needs to be isolated from other units of work that would occur during your function call. Other units of work might include dependencies calling other functions. In this example, a dependency might be some sort of <code>QueryTokenizer</code>.</p>
@@ -359,10 +359,10 @@
 <h2 id="integration-tests" class="relative group">Integration Tests <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#integration-tests" aria-label="Anchor">#</a></span></h2>
 <p>These test integration with other services that your code connects to, typically over a network. These might be databases, search indexes, or other microservices within your company. With integration tests, network calls are normal and usually expected. Imagine we have a class <code>HistoricalQueryStore</code>, which will return past queries for a given user:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HistoricalQueryStore</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="kd">final</span> <span class="n">DbClient</span> <span class="n">db</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">DbClient</span> <span class="n">db</span><span class="o">;</span>
 
-	<span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">SearchQuery</span><span class="o">&gt;</span> <span class="nf">getPastQueries</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
-		<span class="c1">// ...
+  <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">SearchQuery</span><span class="o">&gt;</span> <span class="nf">getPastQueries</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...
 </span><span class="c1"></span>  <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div><p>Here, calls to <code>DbClient</code> directly communicate with a database server.</p>

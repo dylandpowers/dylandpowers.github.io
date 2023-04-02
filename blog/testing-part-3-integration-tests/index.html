@@ -1,0 +1,563 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head>
+  <meta charset="utf-8" />
+  
+    <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(255,255,255)" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Testing Part 3: Integration Tests &middot; Dylan Powers</title>
+    <meta name="title" content="Testing Part 3: Integration Tests &middot; Dylan Powers" />
+  
+  <meta name="description" content="The testing pyramid describes how your codebase should think about tests." />
+  
+  
+  
+  <link rel="canonical" href="https://dylanpowers.me/blog/testing-part-3-integration-tests/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.827e4067f785eb8991b29db972c66513a2555b27ab79607dadc6efd017da4df0fd429efe9ed49a1fc101da2d1cb711816bb8efc4e01baaf9eeb352b258c9f887.css"
+    integrity="sha512-gn5AZ/eF64mRsp25csZlE6JVWyereWB9rcbv0BfaTfD9Qp7&#43;ntSaH8EB2i0ctxGBa7jvxOAbqvnus1KyWMn4hw=="
+  />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.097ba0f9f952c4338661edbcd7abcb3fd57baa33459cf472a192ad7ef214f4cef34ac5c3a4efb0be066b70144cfdf16b1abef0ccb8f07b14a7bcf2a1c394e7bd.js" integrity="sha512-CXug&#43;flSxDOGYe2816vLP9V7qjNFnPRyoZKtfvIU9M7zSsXDpO&#43;wvgZrcBRM/fFrGr7wzLjwexSnvPKhw5TnvQ=="></script>
+  
+  
+  
+  
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Testing Part 3: Integration Tests" />
+<meta property="og:description" content="The testing pyramid describes how your codebase should think about tests." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dylanpowers.me/blog/testing-part-3-integration-tests/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-04-02T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testing Part 3: Integration Tests"/>
+<meta name="twitter:description" content="The testing pyramid describes how your codebase should think about tests."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blogs",
+    "name": "Testing Part 3: Integration Tests",
+    "headline": "Testing Part 3: Integration Tests",
+    
+    "abstract": "The testing pyramid describes how your codebase should think about tests.",
+    "inLanguage": "en",
+    "url" : "https:\/\/dylanpowers.me\/blog\/testing-part-3-integration-tests\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Dylan Powers"
+    },
+    "copyrightYear": "2023",
+    "dateCreated": "2023-04-02T00:00:00\u002b00:00",
+    "datePublished": "2023-04-02T00:00:00\u002b00:00",
+    
+    "dateModified": "2023-04-02T00:00:00\u002b00:00",
+    
+    "keywords": ["Java","Testing","Integration","Database","SQS"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "889"
+  }]
+  </script>
+
+
+  
+  <meta name="author" content="Dylan Powers" />
+  
+    
+      <link href="mailto:dylandpowers@gmail.com" rel="me" />
+    
+      <link href="https://github.com/dylandpowers" rel="me" />
+    
+      <link href="https://linkedin.com/in/dylanpowers25" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+
+
+  
+  
+</head><body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400"
+          >&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 dark:text-neutral print:hidden sm:py-10">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Dylan Powers</a
+  >
+
+      
+
+    </div>
+    
+    
+      <ul class="flex flex-col list-none ltr:text-right rtl:text-left sm:flex-row">
+        
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/blog/"
+                  title="Blogs"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/micros/"
+                  title="Micros"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Micros</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/about/"
+                  title="About"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >About</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                <a
+                  href="/tags/"
+                  title="Tags"
+                  
+                  >
+                    <span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Tags</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            <li
+              class="mb-1 group sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0"
+            >
+              
+                
+                
+              
+            </li>
+          
+          
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Testing Part 3: Integration Tests
+      </h1>
+      <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-04-02 00:00:00 &#43;0000 UTC">2 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+  
+
+
+      </div>
+      
+    </header>
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      <div class="min-w-0 min-h-0 max-w-prose grow">
+        <p>The <em>testing pyramid</em> describes how your codebase should think about tests. Unit tests are the bottom layer because they are the most in number, and represent the baseline for all functionality in your app. The top layer is <em>end-to-end tests</em>, which are typically the fewest in number, but are of the utmost importance (these are sometimes also called <em>acceptance tests</em> - we will cover these in a future post). The middle layer, and the subject of this post, is <em>integration tests</em>.</p>
+<h1 id="what-is-an-integration-test" class="relative group">What Is an Integration Test? <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-an-integration-test" aria-label="Anchor">#</a></span></h1>
+<p>Unfortunately, defining this is an impossible task, as the definition can be quite tricky and can vary wildly between organizations. As the name suggests, the general idea is to test how your components (classes) integrate with other components. At surface level, it sounds like integration tests are just unit tests without the mocking - instead, we call into every service just as we would in a production instance. Technically, this is correct. The tricky part is setting boundaries for what does and doesn’t need an integration test.</p>
+<p>Writing an integration test for every class that has unit tests is overkill. If that were the case, then we would have less of a testing triangle and more of a testing pentagon, since integration and unit tests would be the same in number.</p>
+<h1 id="what-components-to-test" class="relative group">What Components to Test <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-components-to-test" aria-label="Anchor">#</a></span></h1>
+<p>It’s helpful to think about this in terms of your <em>service boundary.</em> The boundary separates your system from other external, usually third-party systems. Anything that reaches across the service boundary needs an integration test. This means if a component is querying a database, sending messages to Kafka, interacting with AWS, etc., it probably needs an integration test where it <em>actually</em> does those things, instead of through a mock.</p>
+<p>For example, consider our <code>FileMatcher</code> class from the previous posts:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileMatcher</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">FileMatcher</span><span class="o">(</span><span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">queryTokenizer</span> <span class="o">=</span> <span class="n">queryTokenizer</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">FileMetadata</span><span class="o">&gt;</span> <span class="nf">getMatchingFiles</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>In this instance, let’s assume that our team owns both the <code>FileMatcher</code> and <code>QueryTokenizer</code> classes. In this instance, we do not need to write an integration test for the <code>FileMatcher</code>, as we are not reaching across the service boundary.</p>
+<p>On the other hand, consider a <code>QuerySaver</code>, which is run after the files have been matched, and saves a user’s queries to the database. A skeleton of this class might look like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuerySaver</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">DbContext</span> <span class="n">db</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">QuerySaver</span><span class="o">(</span><span class="n">DbContext</span> <span class="n">db</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">db</span> <span class="o">=</span> <span class="n">db</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>In this case, the <code>DbContext</code>, which directly queries the db, reaches across a service boundary. In this instance, an integration test is necessary.</p>
+<p>One tricky part is when dealing with other microservices within your organization, typically owned by other teams. Spinning up actual instances of those in a test environment may be tricky without coordination from another team, as you have no idea what other services their service coordinates with. However, if you can reliably know that their service will be able to spin up, having an integration test using an actual instance of their microservice is worthwhile.</p>
+<h1 id="how-to-test" class="relative group">How to Test <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-test" aria-label="Anchor">#</a></span></h1>
+<p>The nature of the test will vary depending on what the external system is. Here are a couple common external systems that need integration tests, and opinions on how to test them:</p>
+<h3 id="databases" class="relative group">Databases <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#databases" aria-label="Anchor">#</a></span></h3>
+<p>To test classes that interact with a database, you likely want to ensure that loading and saving work properly. This typically involves storing data manually through a database context and then loading it through a class method, and asserting that the results are what you expect. The reverse is to store data through a class method, and then load it manually through the database context and assert it is what you expect. The reason we store through the database context <em>directly</em> when testing load methods is that, if we don’t do that, then we are relying on the save method to work properly all the time, and that is not a reliable assumption. In order to test just a single function, one of the operations (load or save) must go directly through the <code>DbContext</code>.</p>
+<h3 id="third-party-services-ie-aws" class="relative group">Third-party Services (i.e. AWS) <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#third-party-services-ie-aws" aria-label="Anchor">#</a></span></h3>
+<p>Say you have a class that publishes a message to <a
+  href="https://aws.amazon.com/sqs/"
+  
+  target="_blank" rel="noreferrer noopener"
+>AWS Simple Queue Service</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SQSMessagePublisher</span> <span class="kd">implements</span> <span class="n">MessagePublisher</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">AmazonSQS</span> <span class="n">client</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">SQSMessagePublisher</span><span class="o">(</span><span class="n">AmazonSQS</span> <span class="n">client</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">client</span> <span class="o">=</span> <span class="n">client</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">publish</span><span class="o">(</span><span class="n">Message</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>In this case, try using an actual instance of <code>AmazonSQS</code>, and test the <code>publish</code> method on your class. Much like in the databases example, we should manually verify somehow that a message was actually published to SQS, by using a method on the <code>AmazonSQS</code> client itself. You will likely also need to do some extra setup like setting up the queue, etc.</p>
+<h3 id="intra-organization-microservices" class="relative group">Intra-organization Microservices <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intra-organization-microservices" aria-label="Anchor">#</a></span></h3>
+<p>As mentioned earlier, exercise caution with these, as you likely will not know what services need to be spun up in a testing environment to run another team’s microservice. However, testing these is similar to how you would test a third-party service. Use the function in your component which will send or receive data from the microservice, and then use the microservice client itself for data in the opposite direction, whether that is sending data to set up a test or fetching data to verify.</p>
+
+      </div>
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  <div class="flex">
+    
+      
+      
+        
+        <img
+          class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+          width="96"
+          height="96"
+          alt="Dylan Powers"
+          src="/img/avatar_hu42b8eb9db929b08b309bfc601d27a140_1054508_192x192_fill_box_smart1_3.png"
+        />
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          Dylan Powers
+        </div>
+      
+      
+      <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+          style="will-change:transform;"
+          href="mailto:dylandpowers@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+          style="will-change:transform;"
+          href="https://github.com/dylandpowers"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+      
+        <a
+          class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+          style="will-change:transform;"
+          href="https://linkedin.com/in/dylanpowers25"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          >
+
+  <span class="relative inline-block align-text-bottom icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</a
+        >
+      
+    
+  </div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="/blog/testing-part-2-unit-tests/">
+              <span
+                class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-2 text-neutral-700 transition-transform group-hover:translate-x-[2px] group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Testing Part 2: Unit Tests</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-03-19 00:00:00 &#43;0000 UTC">19 March 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+          <div
+            class="pointer-events-none absolute top-[100vh] bottom-0 w-12 ltr:right-0 rtl:left-0"
+          >
+            <a
+              href="#the-top"
+              class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+              aria-label="Scroll to top"
+              title="Scroll to top"
+            >
+              &uarr;
+            </a>
+          </div>
+        
+      </main><footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2023
+            Dylan Powers
+        </p>
+      
+      
+      
+        <p class="text-xs text-neutral-500 dark:text-neutral-400">
+          
+          
+          Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+            href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://git.io/hugo-congo" target="_blank" rel="noopener noreferrer">Congo</a>
+        </p>
+      
+    </div>
+    
+    
+  </div>
+  
+  
+</footer>
+
+    </div>
+  </body>
+</html>
