@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://dylanpowers.me/tags/api/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chrome</title>
+      <link>https://dylanpowers.me/tags/chrome/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://dylanpowers.me/tags/javascript/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Database</title>
       <link>https://dylanpowers.me/tags/database/</link>
@@ -283,15 +310,6 @@
       <pubDate>Sun, 15 Aug 2021 21:10:54 -0400</pubDate>
       
       <guid>https://dylanpowers.me/tags/hooks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://dylanpowers.me/tags/javascript/</link>
-      <pubDate>Sun, 15 Aug 2021 21:10:54 -0400</pubDate>
-      
-      <guid>https://dylanpowers.me/tags/javascript/</guid>
       <description></description>
     </item>
     

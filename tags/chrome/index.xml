@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome on Dylan Powers</title>
+    <link>https://dylanpowers.me/tags/chrome/</link>
+    <description>Recent content in Chrome on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Chrome Notifications API Oddity</title>
+      <link>https://dylanpowers.me/micros/chrome-notifications-oddity/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/micros/chrome-notifications-oddity/</guid>
+      <description>I&amp;rsquo;m developing a Chrome extension which is basically the same thing as Key Promoter X in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian.</description>
+    </item>
+    
+  </channel>
+</rss>

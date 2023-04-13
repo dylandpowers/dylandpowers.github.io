@@ -19,14 +19,14 @@
   <meta name="theme-color" content="rgb(255,255,255)" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Hamcrest contains() is weird &middot; Dylan Powers</title>
-    <meta name="title" content="Hamcrest contains() is weird &middot; Dylan Powers" />
+  <title>A Chrome Notifications API Oddity &middot; Dylan Powers</title>
+    <meta name="title" content="A Chrome Notifications API Oddity &middot; Dylan Powers" />
   
-  <meta name="description" content="I have been using Hamcrest in Java for as long as I can remember." />
+  <meta name="description" content="I&rsquo;m developing a Chrome extension which is basically the same thing as Key Promoter X in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian." />
   
   
   
-  <link rel="canonical" href="https://dylanpowers.me/micros/hamcrest-contains-is-weird/" />
+  <link rel="canonical" href="https://dylanpowers.me/micros/chrome-notifications-oddity/" />
   
   
   
@@ -63,17 +63,17 @@
   
   
   
-  <meta property="og:title" content="Hamcrest contains() is weird" />
-<meta property="og:description" content="I have been using Hamcrest in Java for as long as I can remember." />
+  <meta property="og:title" content="A Chrome Notifications API Oddity" />
+<meta property="og:description" content="I&rsquo;m developing a Chrome extension which is basically the same thing as Key Promoter X in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dylanpowers.me/micros/hamcrest-contains-is-weird/" /><meta property="article:section" content="micros" />
-<meta property="article:published_time" content="2023-02-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-02T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
+<meta property="og:url" content="https://dylanpowers.me/micros/chrome-notifications-oddity/" /><meta property="article:section" content="micros" />
+<meta property="article:published_time" content="2023-04-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-04-12T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hamcrest contains() is weird"/>
-<meta name="twitter:description" content="I have been using Hamcrest in Java for as long as I can remember."/>
+<meta name="twitter:title" content="A Chrome Notifications API Oddity"/>
+<meta name="twitter:description" content="I&rsquo;m developing a Chrome extension which is basically the same thing as Key Promoter X in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian."/>
 
   
   <script type="application/ld+json">
@@ -81,26 +81,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Micros",
-    "name": "Hamcrest contains() is weird",
-    "headline": "Hamcrest contains() is weird",
+    "name": "A Chrome Notifications API Oddity",
+    "headline": "A Chrome Notifications API Oddity",
     
-    "abstract": "I have been using Hamcrest in Java for as long as I can remember.",
+    "abstract": "I\u0026rsquo;m developing a Chrome extension which is basically the same thing as Key Promoter X in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian.",
     "inLanguage": "en",
-    "url" : "https:\/\/dylanpowers.me\/micros\/hamcrest-contains-is-weird\/",
+    "url" : "https:\/\/dylanpowers.me\/micros\/chrome-notifications-oddity\/",
     "author" : {
       "@type": "Person",
       "name": "Dylan Powers"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-02-02T00:00:00\u002b00:00",
-    "datePublished": "2023-02-02T00:00:00\u002b00:00",
+    "dateCreated": "2023-04-12T00:00:00\u002b00:00",
+    "datePublished": "2023-04-12T00:00:00\u002b00:00",
     
-    "dateModified": "2023-02-02T00:00:00\u002b00:00",
+    "dateModified": "2023-04-12T00:00:00\u002b00:00",
     
-    "keywords": ["Java","Hamcrest"],
+    "keywords": ["Chrome","JavaScript","API"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "130"
+    "wordCount": "163"
   }]
   </script>
 
@@ -262,7 +262,7 @@
     <header class="max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Hamcrest contains() is weird
+        A Chrome Notifications API Oddity
       </h1>
       <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -296,7 +296,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2023-02-02 00:00:00 &#43;0000 UTC">2 February 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2023-04-12 00:00:00 &#43;0000 UTC">12 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -313,22 +313,30 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>I have been using <a
-  href="https://hamcrest.org/JavaHamcrest/"
+        <p>I&rsquo;m developing a Chrome extension which is basically the same thing as <a
+  href="https://plugins.jetbrains.com/plugin/9792-key-promoter-x"
   
   target="_blank" rel="noreferrer noopener"
->Hamcrest in Java</a> for as long as I can remember. I love using it because it&rsquo;s <em>much</em> more powerful than native JUnit assertions, and the assertions read much easier. So instead of this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">assertEquals</span><span class="o">(</span><span class="n">actual</span><span class="o">,</span> <span class="n">expected</span><span class="o">);</span>
-</code></pre></div><p>We get:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">assertThat</span><span class="o">(</span><span class="n">actual</span><span class="o">,</span> <span class="n">is</span><span class="o">(</span><span class="n">expected</span><span class="o">));</span>
-</code></pre></div><p>Yeah, it&rsquo;s actually more keystrokes, but that&rsquo;s Java&rsquo;s thing 😎.</p>
-<p>My favorite part about Hamcrest is using it for asserting on items in collections, but the behavior of the <code>contains()</code> matcher can be quite odd. Say you have a list <code>[A, B]</code> and you store it in a variable <code>list</code>. If you run</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">assertThat</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">contains</span><span class="o">(</span><span class="s">&#34;A&#34;</span><span class="o">));</span>
-</code></pre></div><p>The assertion will actually fail - this is because the <code>contains()</code> matcher actually means <code>containsExactly()</code>. I use this custom assertion as a convenience:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">containsExactly</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">members</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">contains</span><span class="o">(</span><span class="n">members</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div>
+>Key Promoter X</a> in IntelliJ, which reminds you about common keyboard shortcuts you could be using instead of using the mouse like a Plebeian.</p>
+<p>I was using the <code>chrome.notifications.create</code> API to create a notification with a passed-in <code>notificationId</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">chrome</span><span class="p">.</span><span class="nx">notifications</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">notificationId</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;basic&#34;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;Chrome Key Promoter&#34;</span><span class="p">,</span>
+  <span class="nx">message</span><span class="p">,</span>
+  <span class="nx">iconUrl</span><span class="o">:</span> <span class="s2">&#34;../icon.jpeg&#34;</span><span class="p">,</span>
+  <span class="nx">buttons</span><span class="o">:</span> <span class="p">[{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&#34;Silence&#34;</span> <span class="p">}],</span>
+<span class="p">});</span>
+</code></pre></div><p>However, I could not get the notification to show up no matter what I did. Reloading the extension didn&rsquo;t help. The <a
+  href="https://developer.chrome.com/docs/extensions/reference/notifications/#method-create"
+  
+  target="_blank" rel="noreferrer noopener"
+>documentation</a> clearly states that, if you pass a <code>notificationId</code>:</p>
+<blockquote>
+<p>If it matches an existing notification, this method first clears that notification before proceeding with the create operation.</p>
+</blockquote>
+<p>However, this is not the case. I believe the API documentation is simply out of date, because when I manually cleared the notification beforehand using <code>chrome.notifications.clear(notificationId)</code>, the notification starting appearing as expected.</p>
+<p>TL;DR if you run into this same issue, just manually clear the notification before creating it.</p>
+
       </div>
     </section>
     <footer class="pt-8 max-w-prose print:hidden">
@@ -436,7 +444,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="group flex" href="/micros/why-is-everything-a-todo-app/">
+            <a class="group flex" href="/micros/hamcrest-contains-is-weird/">
               <span
                 class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -448,11 +456,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Why is everything a todo list app?</span
+                  >Hamcrest contains() is weird</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-01-24 00:00:00 &#43;0000 UTC">24 January 2023</time>
+                    <time datetime="2023-02-02 00:00:00 &#43;0000 UTC">2 February 2023</time>
                   
                 </span>
               </span>
@@ -460,28 +468,6 @@
           
         </span>
         <span>
-          
-            <a class="group flex text-right" href="/micros/chrome-notifications-oddity/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >A Chrome Notifications API Oddity</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-04-12 00:00:00 &#43;0000 UTC">12 April 2023</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-2 text-neutral-700 transition-transform group-hover:translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
