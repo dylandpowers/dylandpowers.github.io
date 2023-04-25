@@ -6,7 +6,16 @@
     <description>Recent content in Acceptance on Dylan Powers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/acceptance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/tags/acceptance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Part 4: End-to-end Tests</title>
+      <link>https://dylanpowers.me/blog/testing-part-4-end-to-end-tests/</link>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/blog/testing-part-4-end-to-end-tests/</guid>
+      <description>As discussed in part 3 of this series, end-to-end tests sit at the top of the testing pyramid.</description>
+    </item>
+    
     <item>
       <title>Testing Part 1: The Types of Tests</title>
       <link>https://dylanpowers.me/blog/testing-part-1-the-types-of-tests/</link>

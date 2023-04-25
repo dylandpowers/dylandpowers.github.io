@@ -19,14 +19,14 @@
   <meta name="theme-color" content="rgb(255,255,255)" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Testing Part 3: Integration Tests &middot; Dylan Powers</title>
-    <meta name="title" content="Testing Part 3: Integration Tests &middot; Dylan Powers" />
+  <title>Testing Part 4: End-to-end Tests &middot; Dylan Powers</title>
+    <meta name="title" content="Testing Part 4: End-to-end Tests &middot; Dylan Powers" />
   
-  <meta name="description" content="The testing pyramid describes how your codebase should think about tests." />
+  <meta name="description" content="As discussed in part 3 of this series, end-to-end tests sit at the top of the testing pyramid." />
   
   
   
-  <link rel="canonical" href="https://dylanpowers.me/blog/testing-part-3-integration-tests/" />
+  <link rel="canonical" href="https://dylanpowers.me/blog/testing-part-4-end-to-end-tests/" />
   
   
   
@@ -63,17 +63,17 @@
   
   
   
-  <meta property="og:title" content="Testing Part 3: Integration Tests" />
-<meta property="og:description" content="The testing pyramid describes how your codebase should think about tests." />
+  <meta property="og:title" content="Testing Part 4: End-to-end Tests" />
+<meta property="og:description" content="As discussed in part 3 of this series, end-to-end tests sit at the top of the testing pyramid." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dylanpowers.me/blog/testing-part-3-integration-tests/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2023-04-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-04-02T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
+<meta property="og:url" content="https://dylanpowers.me/blog/testing-part-4-end-to-end-tests/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-04-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-04-24T00:00:00+00:00" /><meta property="og:site_name" content="Dylan Powers" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Testing Part 3: Integration Tests"/>
-<meta name="twitter:description" content="The testing pyramid describes how your codebase should think about tests."/>
+<meta name="twitter:title" content="Testing Part 4: End-to-end Tests"/>
+<meta name="twitter:description" content="As discussed in part 3 of this series, end-to-end tests sit at the top of the testing pyramid."/>
 
   
   <script type="application/ld+json">
@@ -81,26 +81,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "Testing Part 3: Integration Tests",
-    "headline": "Testing Part 3: Integration Tests",
+    "name": "Testing Part 4: End-to-end Tests",
+    "headline": "Testing Part 4: End-to-end Tests",
     
-    "abstract": "The testing pyramid describes how your codebase should think about tests.",
+    "abstract": "As discussed in part 3 of this series, end-to-end tests sit at the top of the testing pyramid.",
     "inLanguage": "en",
-    "url" : "https:\/\/dylanpowers.me\/blog\/testing-part-3-integration-tests\/",
+    "url" : "https:\/\/dylanpowers.me\/blog\/testing-part-4-end-to-end-tests\/",
     "author" : {
       "@type": "Person",
       "name": "Dylan Powers"
     },
     "copyrightYear": "2023",
-    "dateCreated": "2023-04-02T00:00:00\u002b00:00",
-    "datePublished": "2023-04-02T00:00:00\u002b00:00",
+    "dateCreated": "2023-04-24T00:00:00\u002b00:00",
+    "datePublished": "2023-04-24T00:00:00\u002b00:00",
     
-    "dateModified": "2023-04-02T00:00:00\u002b00:00",
+    "dateModified": "2023-04-24T00:00:00\u002b00:00",
     
-    "keywords": ["Java","Testing","Integration","Database","SQS"],
+    "keywords": ["Java","Testing","End-to-end","Acceptance","Selenium"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "889"
+    "wordCount": "950"
   }]
   </script>
 
@@ -262,7 +262,7 @@
     <header class="max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Testing Part 3: Integration Tests
+        Testing Part 4: End-to-end Tests
       </h1>
       <div class="mt-8 mb-12 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -296,7 +296,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2023-04-02 00:00:00 &#43;0000 UTC">2 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+      <time datetime="2023-04-24 00:00:00 &#43;0000 UTC">24 April 2023</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
     
 
     
@@ -313,64 +313,49 @@
     <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
       
       <div class="min-w-0 min-h-0 max-w-prose grow">
-        <p>The <em>testing pyramid</em> describes how your codebase should think about tests. Unit tests are the bottom layer because they are the most in number, and represent the baseline for all functionality in your app. The top layer is <em>end-to-end tests</em>, which are typically the fewest in number, but are of the utmost importance (these are sometimes also called <em>acceptance tests</em> - we will cover these in a future post). The middle layer, and the subject of this post, is <em>integration tests</em>.</p>
-<h1 id="what-is-an-integration-test" class="relative group">What Is an Integration Test? <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-an-integration-test" aria-label="Anchor">#</a></span></h1>
-<p>Unfortunately, defining this is an impossible task, as the definition can be quite tricky and can vary wildly between organizations. As the name suggests, the general idea is to test how your components (classes) integrate with other components. At surface level, it sounds like integration tests are just unit tests without the mocking - instead, we call into every service just as we would in a production instance. Technically, this is correct. The tricky part is setting boundaries for what does and doesn’t need an integration test.</p>
-<p>Writing an integration test for every class that has unit tests is overkill. If that were the case, then we would have less of a testing triangle and more of a testing pentagon, since integration and unit tests would be the same in number.</p>
-<h1 id="what-components-to-test" class="relative group">What Components to Test <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-components-to-test" aria-label="Anchor">#</a></span></h1>
-<p>It’s helpful to think about this in terms of your <em>service boundary.</em> The boundary separates your system from other external, usually third-party systems. Anything that reaches across the service boundary needs an integration test. This means if a component is querying a database, sending messages to Kafka, interacting with AWS, etc., it probably needs an integration test where it <em>actually</em> does those things, instead of through a mock.</p>
-<p>For example, consider our <code>FileMatcher</code> class from the previous posts:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileMatcher</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">;</span>
-
-  <span class="kd">public</span> <span class="nf">FileMatcher</span><span class="o">(</span><span class="n">QueryTokenizer</span> <span class="n">queryTokenizer</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">queryTokenizer</span> <span class="o">=</span> <span class="n">queryTokenizer</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">FileMetadata</span><span class="o">&gt;</span> <span class="nf">getMatchingFiles</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>In this instance, let’s assume that our team owns both the <code>FileMatcher</code> and <code>QueryTokenizer</code> classes. In this instance, we do not need to write an integration test for the <code>FileMatcher</code>, as we are not reaching across the service boundary.</p>
-<p>On the other hand, consider a <code>QuerySaver</code>, which is run after the files have been matched, and saves a user’s queries to the database. A skeleton of this class might look like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuerySaver</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">DbContext</span> <span class="n">db</span><span class="o">;</span>
-
-  <span class="kd">public</span> <span class="nf">QuerySaver</span><span class="o">(</span><span class="n">DbContext</span> <span class="n">db</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">db</span> <span class="o">=</span> <span class="n">db</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">SearchQuery</span> <span class="n">query</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>In this case, the <code>DbContext</code>, which directly queries the db, reaches across a service boundary. In this instance, an integration test is necessary.</p>
-<p>One tricky part is when dealing with other microservices within your organization, typically owned by other teams. Spinning up actual instances of those in a test environment may be tricky without coordination from another team, as you have no idea what other services their service coordinates with. However, if you can reliably know that their service will be able to spin up, having an integration test using an actual instance of their microservice is worthwhile.</p>
-<h1 id="how-to-test" class="relative group">How to Test <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-test" aria-label="Anchor">#</a></span></h1>
-<p>The nature of the test will vary depending on what the external system is. Here are a couple common external systems that need integration tests, and opinions on how to test them:</p>
-<h3 id="databases" class="relative group">Databases <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#databases" aria-label="Anchor">#</a></span></h3>
-<p>To test classes that interact with a database, you likely want to ensure that loading and saving work properly. This typically involves storing data manually through a database context and then loading it through a class method, and asserting that the results are what you expect. The reverse is to store data through a class method, and then load it manually through the database context and assert it is what you expect. The reason we store through the database context <em>directly</em> when testing load methods is that, if we don’t do that, then we are relying on the save method to work properly all the time, and that is not a reliable assumption. In order to test just a single function, one of the operations (load or save) must go directly through the <code>DbContext</code>.</p>
-<h3 id="third-party-services-ie-aws" class="relative group">Third-party Services (i.e. AWS) <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#third-party-services-ie-aws" aria-label="Anchor">#</a></span></h3>
-<p>Say you have a class that publishes a message to <a
-  href="https://aws.amazon.com/sqs/"
+        <p>As discussed in <a
+  href="https://dylanpowers.me/blog/testing-part-3-integration-tests/"
   
   target="_blank" rel="noreferrer noopener"
->AWS Simple Queue Service</a>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SQSMessagePublisher</span> <span class="kd">implements</span> <span class="n">MessagePublisher</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">AmazonSQS</span> <span class="n">client</span><span class="o">;</span>
+>part 3 of this series</a>, end-to-end tests sit at the top of the testing pyramid. They are the fewest in number, yet are still incredibly important. These are also sometimes referred to as <em>acceptance tests.</em> The two terms will be used interchangeably throughout this post.</p>
+<h1 id="what-are-end-to-end-tests" class="relative group">What are End-to-end tests? <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-are-end-to-end-tests" aria-label="Anchor">#</a></span></h1>
+<p>End-to-end tests, as the name suggests, test how end users (which may be within your organization) interact with your application. This could be in the form of UI interaction or API consumption, depending on the nature of the application. The reason they are also called acceptance tests is because their passing is required for a user to “accept” that the requirements of the application have been met.</p>
+<p>End-to-end tests are not restricted to frontend or backend - they test the whole flow of your application, from interacting with components in the frontend, to requesting data from the backend, to displaying that data again in the frontend. In this way we are testing the frontend code and the backend code, as well as how they interact with each other.</p>
+<p>These should only test workflows that are accessible to users of your application. This is in contrast to unit tests, which should test functions that are ostensibly hidden from users. The test should start by performing some sort of workflow that a user could perform, and then assert on the end state of the application after it has been performed. Nothing in this process should be mocked - all APIs and services should function just as they would in production (but in a test environment).</p>
+<p>As mentioned previously, we can sub-divide these tests into UI interaction and API consumption, so let’s go over each in more detail.</p>
+<h1 id="ui-interaction" class="relative group">UI Interaction <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#ui-interaction" aria-label="Anchor">#</a></span></h1>
+<p>Let’s consider our code search application from the previous posts. Users would expect to be able to search for a piece of code in a search bar and then view all files that match that piece of code in a results list. We should add an acceptance test to verify this workflow.</p>
+<p>First, we need to set up our test data. This means creating a test account for the user and a fake repository so that we can search for code. Since we aren’t mocking anything during these tests, we need to actually save all of this data to our database. To do this, you can either set up the account and repository as part of the test itself, or have a separate “test database” that always has this information stored. The downside of using the test database is that any changes to it may affect other tests, whereas setting up data in the test itself lets you always rely on your data being how you expect it to be.</p>
+<p>For the frontend portion of the test, <a
+  href="https://www.selenium.dev/"
+  
+  target="_blank" rel="noreferrer noopener"
+>Selenium</a> is a very useful tool. It allows you to automate browser actions like moving the cursor and clicking, so that you can reliably repeat these actions in tests. In our situation, we would use Selenium to click on the search bar, type in a query, and hit enter.</p>
+<p>At that point, we would wait for the results of the query to come back to the page. These results are produced by a real API call that would happen without explicit invocation, since it should be invoked by the frontend components. At that point, we should wait for the request to finish, and then assert on the contents of the results list once it has finished.</p>
+<p>Do not forget at the end of these tests to “clean up” any test data if you need to, as not to interfere with other tests in the same suite.</p>
+<h1 id="api-consumption" class="relative group">API Consumption <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#api-consumption" aria-label="Anchor">#</a></span></h1>
+<p>If the only API in your application is your REST/GraphQL API exposed by your web server, and the only interactions with it are through your web or mobile app, then UI acceptance tests should suffice. However, that is rarely the case; usually, organizations have a handful of microservices that serve requests from other microservices or web servers.</p>
+<p>In these cases, an end-to-end test just means spinning up an instance of that service, making a request to it, and verifying what the response should be. As before, we do not mock anything, and we may need to set up some test data beforehand.</p>
+<p>Note that just because a web server has its endpoints tested via UI interaction tests, doesn’t mean it doesn’t need pure API tests as well. In fact, they should supplement each other.</p>
+<p>Consider the same example as above, where we are testing the capability of our search page. In this case, we are going to make a request to the web server to search for a piece of code. Then, in the test, we will assert on what we expect the response to look like based on the test data that we inserted.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">search_simpleQuery</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">setupTestRepository</span><span class="o">();</span>
+  <span class="n">JsonObject</span> <span class="n">request</span> <span class="o">=</span> <span class="n">buildRequest</span><span class="o">(</span><span class="n">someFilePath</span><span class="o">);</span>
+  <span class="n">JsonObject</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getHeaders</span><span class="o">();</span>
 
-  <span class="kd">public</span> <span class="nf">SQSMessagePublisher</span><span class="o">(</span><span class="n">AmazonSQS</span> <span class="n">client</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">client</span> <span class="o">=</span> <span class="n">client</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">publish</span><span class="o">(</span><span class="n">Message</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>  <span class="o">}</span>
+  <span class="n">Response</span> <span class="n">response</span> <span class="o">=</span> <span class="n">restApiClient</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="n">headers</span><span class="o">,</span> <span class="n">request</span><span class="o">);</span>
+  <span class="n">Response</span> <span class="n">expectedResponse</span> <span class="o">=</span> <span class="c1">// ....
+</span><span class="c1"></span>  <span class="n">assertThat</span><span class="o">(</span><span class="n">response</span><span class="o">,</span> <span class="n">is</span><span class="o">(</span><span class="n">expectedResponse</span><span class="o">));</span>
 <span class="o">}</span>
-</code></pre></div><p>In this case, try using an actual instance of <code>AmazonSQS</code>, and test the <code>publish</code> method on your class. Much like in the databases example, we should manually verify somehow that a message was actually published to SQS, by using a method on the <code>AmazonSQS</code> client itself. You will likely also need to do some extra setup like setting up the queue, etc.</p>
-<h3 id="intra-organization-microservices" class="relative group">Intra-organization Microservices <span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intra-organization-microservices" aria-label="Anchor">#</a></span></h3>
-<p>As mentioned earlier, exercise caution with these, as you likely will not know what services need to be spun up in a testing environment to run another team’s microservice. However, testing these is similar to how you would test a third-party service. Use the function in your component which will send or receive data from the microservice, and then use the microservice client itself for data in the opposite direction, whether that is sending data to set up a test or fetching data to verify.</p>
+</code></pre></div><hr>
+<p>That does it for our testing series! To recap, there are three types of tests that are crucial to any software stack:</p>
+<ol>
+<li>Unit tests. These are the most in number. They involve testing individual functions in your application. All underlying dependencies should be mocked.</li>
+<li>Integration tests. These involve testing classes that interact with dependencies across service boundaries, i.e. with a database. In these tests, dependencies are not mocked.</li>
+<li>End-to-end tests. These test external-facing workflows in your application, like interacting with a UI or consuming an API. Even in the tests, you interact with the system as if you were an external user.</li>
+</ol>
+<p>I hope this series has been useful. Happy testing!</p>
 
       </div>
     </section>
@@ -479,7 +464,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="group flex" href="/blog/testing-part-2-unit-tests/">
+            <a class="group flex" href="/blog/testing-part-3-integration-tests/">
               <span
                 class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -491,11 +476,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Testing Part 2: Unit Tests</span
+                  >Testing Part 3: Integration Tests</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2023-03-19 00:00:00 &#43;0000 UTC">19 March 2023</time>
+                    <time datetime="2023-04-02 00:00:00 &#43;0000 UTC">2 April 2023</time>
                   
                 </span>
               </span>
@@ -503,28 +488,6 @@
           
         </span>
         <span>
-          
-            <a class="group flex text-right" href="/blog/testing-part-4-end-to-end-tests/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Testing Part 4: End-to-end Tests</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2023-04-24 00:00:00 &#43;0000 UTC">24 April 2023</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-2 text-neutral-700 transition-transform group-hover:translate-x-[2px] group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
