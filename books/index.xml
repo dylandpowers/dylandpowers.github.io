@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Books on Dylan Powers</title>
+    <link>https://dylanpowers.me/books/</link>
+    <description>Recent content in Books on Dylan Powers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://dylanpowers.me/books/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supercommunicators by Charles Duhigg</title>
+      <link>https://dylanpowers.me/books/supercommunicators/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/books/supercommunicators/</guid>
+      <description>3 types of conversations:  Practical (what is this really about?</description>
+    </item>
+    
+    <item>
+      <title>The Subtle Art of Not Giving A F*ck by Mark Manson</title>
+      <link>https://dylanpowers.me/books/the-subtle-art-of-not-giving-af/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://dylanpowers.me/books/the-subtle-art-of-not-giving-af/</guid>
+      <description>This book isn&amp;rsquo;t about caring about nothing, but rather being more selective about the things that you care about.</description>
+    </item>
+    
+  </channel>
+</rss>
